@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "title": "Andres's ZZZ Dashboard",
+    "updated": "2026-03-25",
+    "totalAgents": 23,
+    "maxLevel": 60
+  },
+  "agents": [
+    { "name": "Ye Shunguang", "section": "ATTACK", "specialty": "Attack", "attribute": "Physical", "mindscape": "M1", "wengine": "W1", "level": 60, "discs": null, "notes": null },
+    { "name": "Evelyn", "section": "ATTACK", "specialty": "Attack", "attribute": "Fire", "mindscape": "M3", "wengine": "W1", "level": 60, "discs": "4pc Woodpecker + 2pc Inferno", "notes": "High investment carry" },
+    { "name": "Seed", "section": "ATTACK", "specialty": "Attack", "attribute": "Electric", "mindscape": "M0", "wengine": "W1", "level": 60, "discs": null, "notes": null },
+    { "name": "Soldier 0 Anby", "section": "ATTACK", "specialty": "Attack", "attribute": "Electric", "mindscape": "M1", "wengine": "W1", "level": 60, "discs": null, "notes": null },
+    { "name": "Ellen", "section": "ATTACK", "specialty": "Attack", "attribute": "Ice", "mindscape": "M0", "wengine": "W0", "level": 60, "discs": null, "notes": "Low investment / Benched" },
+    { "name": "Jane Doe", "section": "ANOMALY", "specialty": "Anomaly", "attribute": "Physical", "mindscape": "M3", "wengine": "W1", "level": 60, "discs": null, "notes": "High investment carry" },
+    { "name": "Alice", "section": "ANOMALY", "specialty": "Anomaly", "attribute": "Physical", "mindscape": "M1", "wengine": "W1", "level": 60, "discs": null, "notes": null },
+    { "name": "Miyabi", "section": "ANOMALY", "specialty": "Anomaly", "attribute": "Ice", "mindscape": "M1", "wengine": "W1", "level": 60, "discs": null, "notes": "Needs CD farming" },
+    { "name": "Vivian", "section": "ANOMALY", "specialty": "Anomaly", "attribute": "Ether", "mindscape": "M2", "wengine": "W1", "level": 60, "discs": null, "notes": null },
+    { "name": "Burnice", "section": "ANOMALY", "specialty": "Anomaly", "attribute": "Fire", "mindscape": "M0", "wengine": "W1", "level": 60, "discs": null, "notes": null },
+    { "name": "Aria", "section": "ANOMALY", "specialty": "Anomaly", "attribute": "Ether", "mindscape": "M0", "wengine": "W1", "level": 60, "discs": null, "notes": "Angels of Delusion DPS" },
+    { "name": "Dialyn", "section": "STUN", "specialty": "Stun", "attribute": "Physical", "mindscape": "M0", "wengine": "W1", "level": 60, "discs": null, "notes": null },
+    { "name": "Ju Fufu", "section": "STUN", "specialty": "Stun", "attribute": "Fire", "mindscape": "M0", "wengine": "W1", "level": 60, "discs": null, "notes": null },
+    { "name": "Trigger", "section": "STUN", "specialty": "Stun", "attribute": "Electric", "mindscape": "M0", "wengine": "W1", "level": 60, "discs": null, "notes": null },
+    { "name": "Lighter", "section": "STUN", "specialty": "Stun", "attribute": "Fire", "mindscape": "M0", "wengine": "W0", "level": 60, "discs": null, "notes": "Low investment" },
+    { "name": "Nangong Yu", "section": "STUN", "specialty": "Stun", "attribute": "Ether", "mindscape": "M0", "wengine": "W1", "level": 60, "discs": null, "notes": "Anomaly-Stun hybrid — sig equipped" },
+    { "name": "Astra Yao", "section": "SUPPORT", "specialty": "Support", "attribute": "Ether", "mindscape": "M1", "wengine": "W1", "level": 60, "discs": null, "notes": "Universal support" },
+    { "name": "Lucia", "section": "SUPPORT", "specialty": "Support", "attribute": "Ether", "mindscape": "M0", "wengine": "W1", "level": 60, "discs": null, "notes": null },
+    { "name": "Yuzuha", "section": "SUPPORT", "specialty": "Support", "attribute": "Physical", "mindscape": "M0", "wengine": "W1", "level": 60, "discs": null, "notes": null },
+    { "name": "Sunna", "section": "SUPPORT", "specialty": "Support", "attribute": "Physical", "mindscape": "M0", "wengine": "W1", "level": 60, "discs": null, "notes": null },
+    { "name": "Zhao", "section": "SUPPORT", "specialty": "Support", "attribute": "Ice", "mindscape": "M0", "wengine": "W0", "level": 60, "discs": null, "notes": "Low investment" },
+    { "name": "Yidhari", "section": "RAPTURE", "specialty": "Rapture", "attribute": "Ice", "mindscape": "M0", "wengine": "W1", "level": 60, "discs": null, "notes": "Needs CD farming" },
+    { "name": "Yixuan", "section": "RAPTURE", "specialty": "Rapture", "attribute": "Ether", "mindscape": "M1", "wengine": "W1", "level": 60, "discs": null, "notes": "Needs CD farming" }
+  ],
+  "audit": [
+    { "name": "Ye Shunguang", "type": "CRIT Carry", "stats": [
+      { "label": "ATK", "optimal": "1,800-2,000+", "current": "3,731", "min": 1800 },
+      { "label": "CR (sheet)", "optimal": "50-55%", "current": "48.2%", "min": 50, "max": 55, "unit": "%" },
+      { "label": "CRIT DMG", "optimal": "160-200%+", "current": "142.8%", "min": 160, "unit": "%" }
+    ], "before": null, "delta": null, "priority": "Farm CD substats", "priorityStatus": "yellow" },
+    { "name": "Evelyn", "type": "CRIT Carry", "stats": [
+      { "label": "ATK", "optimal": "1,800-2,000+", "current": "2,644", "min": 1800 },
+      { "label": "CR (sheet)", "optimal": "~55%", "current": "75.4%", "min": 55, "max": 60, "unit": "%", "note": "▲" },
+      { "label": "CRIT DMG", "optimal": "160%+", "current": "165.2%", "min": 160, "unit": "%", "note": "▲" }
+    ], "before": "CD was 136.4%", "delta": "+28.8% CD", "priority": "Swap 2pc → Branch&Blade", "priorityStatus": "yellow" },
+    { "name": "Seed", "type": "CRIT Carry", "stats": [
+      { "label": "ATK", "optimal": "1,800-2,000+", "current": "3,212", "min": 1800 },
+      { "label": "CRIT Rate", "optimal": "70-80%", "current": "65.8%", "min": 70, "unit": "%" },
+      { "label": "CRIT DMG", "optimal": "150-170%+", "current": "150.8%", "min": 150, "unit": "%" }
+    ], "before": null, "delta": null, "priority": "Minor CR tuning", "priorityStatus": "yellow" },
+    { "name": "Ellen", "type": "CRIT Carry", "stats": [
+      { "label": "ATK", "optimal": "1,800-2,000+", "current": "2,971", "min": 1800 },
+      { "label": "CRIT Rate", "optimal": "70-80%", "current": "39.4%", "min": 70, "unit": "%" },
+      { "label": "CRIT DMG", "optimal": "150-180%+", "current": "136.4%", "min": 150, "unit": "%" }
+    ], "before": null, "delta": null, "priority": "Benched — low priority", "priorityStatus": "neutral" },
+    { "name": "Jane Doe", "type": "Anomaly", "stats": [
+      { "label": "ATK", "optimal": "1,600-1,800+", "current": "2,157", "min": 1600 },
+      { "label": "Anomaly Prof.", "optimal": "250-310", "current": "335", "min": 250 },
+      { "label": "Anom. Mastery", "optimal": "150+", "current": "192", "min": 150 }
+    ], "before": null, "delta": null, "priority": "DONE — Perfect build", "priorityStatus": "green" },
+    { "name": "Alice", "type": "Anomaly", "stats": [
+      { "label": "ATK", "optimal": "1,600-1,800+", "current": "2,769", "min": 1600 },
+      { "label": "Anomaly Prof.", "optimal": "250-310", "current": "300", "min": 250 },
+      { "label": "Anom. Mastery", "optimal": "150+", "current": "195", "min": 150 }
+    ], "before": null, "delta": null, "priority": "DONE — Perfect build", "priorityStatus": "green" },
+    { "name": "Miyabi", "type": "CRIT / Anomaly", "stats": [
+      { "label": "ATK", "optimal": "1,800-2,000+", "current": "2,859", "min": 1800 },
+      { "label": "CRIT Rate", "optimal": "75-85%", "current": "80.2%", "min": 75, "unit": "%" },
+      { "label": "CRIT DMG", "optimal": "150-180%+", "current": "109.2%", "min": 150, "unit": "%", "note": "▲" }
+    ], "before": "CD was 94.8%", "delta": "+14.4% CD", "priority": "HIGH — Farm Branch&Blade", "priorityStatus": "red" },
+    { "name": "Yixuan", "type": "Rupture", "stats": [
+      { "label": "Sheer Force", "optimal": "2,100-2,400", "current": "2,598", "min": 2100 },
+      { "label": "CRIT Rate", "optimal": "80-90%", "current": "70.6%", "min": 80, "unit": "%" },
+      { "label": "CRIT DMG", "optimal": "140-160%", "current": "112.4%", "min": 140, "unit": "%", "note": "▲" }
+    ], "before": "CD was 78.8%", "delta": "+33.6% CD", "priority": "Farm CD substats", "priorityStatus": "yellow" },
+    { "name": "Yidhari", "type": "Rupture", "stats": [
+      { "label": "Sheer Force", "optimal": "2,000-2,300", "current": "2,445", "min": 2000 },
+      { "label": "CRIT Rate", "optimal": "75-85%", "current": "75.4%", "min": 75, "unit": "%" },
+      { "label": "CRIT DMG", "optimal": "140-160%", "current": "98%", "min": 140, "unit": "%", "note": "▲" }
+    ], "before": "CD was 83.6%", "delta": "+14.4% CD", "priority": "HIGH — Farm Branch&Blade", "priorityStatus": "red" },
+    { "name": "Aria", "type": "Anomaly", "stats": [
+      { "label": "ATK", "optimal": "2,500-3,000+", "current": "2,715", "min": 2500 },
+      { "label": "Anom. Mastery", "optimal": "300-350+", "current": "253", "min": 300 },
+      { "label": "Anomaly Prof.", "optimal": "300+", "current": "310", "min": 300 }
+    ], "before": null, "delta": null, "priority": "HIGH — Farm Anomaly Mastery", "priorityStatus": "red" },
+    { "name": "Nangong Yu", "type": "Stun / Anomaly", "stats": [
+      { "label": "Anom. Mastery", "optimal": "250-300+", "current": "207", "min": 250 },
+      { "label": "Anomaly Prof.", "optimal": "300+", "current": "305", "min": 300 },
+      { "label": "Impact", "optimal": "150-200+", "current": "120", "min": 150 }
+    ], "before": null, "delta": null, "priority": "Level sig to 60 → farm AM discs", "priorityStatus": "yellow" }
+  ],
+  "sessions": [
+    { "label": "Evelyn (M3)", "detail": "CD 136.4% → 165.2% (+28.8%) | CR 80.2% → 75.4% (freed overcap) | PEN 0% → 24%", "status": "green" },
+    { "label": "Yixuan (M1)", "detail": "CD 78.8% → 112.4% (+33.6%) | Sheer Force 2,617 → 2,598 (minimal loss)", "status": "green" },
+    { "label": "Miyabi (M1)", "detail": "CD 94.8% → 109.2% (+14.4%) | ATK 2,607 → 2,859 (+252)", "status": "yellow" },
+    { "label": "Yidhari (M0)", "detail": "CD 83.6% → 98% (+14.4%) | HP 17,522 → 18,032 | CR 80.2% → 75.4%", "status": "yellow" },
+    { "label": "Total CD Gained", "detail": "+91.2% CRIT DMG redistributed across 4 agents in one session", "status": "green" },
+    { "label": "Next Steps", "detail": "Farm Branch & Blade Song discs for Miyabi and Yidhari. Both still well below CD targets.", "status": "red" }
+  ]
+}
