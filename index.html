@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Andres's ZZZ Dashboard</title>
+<title>ZZZ Dashboard</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
@@ -89,6 +89,19 @@
     height: 2px; background: var(--accent); border-radius: 2px;
   }
   .tab:hover:not(.active) { color: #999; }
+
+  .profile-switch {
+    display: flex; gap: 2px; border-radius: 10px; overflow: hidden;
+    background: rgba(255,255,255,0.035);
+  }
+  .profile-btn {
+    padding: 8px 14px; border: none; cursor: pointer;
+    font-family: inherit; font-size: 11px; font-weight: 800;
+    letter-spacing: 0.8px; text-transform: uppercase;
+    background: transparent; color: #666; transition: all 0.2s;
+  }
+  .profile-btn.active { background: rgba(255,255,255,0.06); color: var(--text-primary); }
+  .profile-btn:hover:not(.active) { color: #aaa; }
 
   .filters { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 2px; }
   .filter-btn {
@@ -217,6 +230,33 @@
   .summary-num { font-size: 26px; font-weight: 900; }
   .summary-label { font-size: 11px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; margin-top: 2px; }
 
+  .pull-priority { margin-top: 24px; }
+  .pull-list {
+    background: rgba(255,255,255,0.015);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle); border-top: none;
+  }
+  .pull-row {
+    display: grid; grid-template-columns: 44px 1.2fr 2fr 1.7fr;
+    gap: 12px; align-items: start;
+    padding: 13px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  .pull-row:nth-child(odd) { background: rgba(255,255,255,0.018); }
+  .pull-row:last-child { border-bottom: none; }
+  .pull-rank {
+    width: 28px; height: 28px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--accent-glow); color: var(--accent);
+    font-size: 12px; font-weight: 900;
+    border: 1px solid rgba(196,181,253,0.16);
+  }
+  .pull-name { font-size: 14px; font-weight: 800; color: var(--text-primary); }
+  .pull-priority-label { margin-top: 4px; font-size: 10px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: var(--yellow-text); }
+  .pull-detail { font-size: 12px; line-height: 1.45; color: #9b94b5; }
+  .pull-team { font-size: 11px; line-height: 1.45; color: var(--text-muted); }
+
   .legend {
     display: flex; gap: 18px; padding: 9px 16px; margin-bottom: 16px;
     background: rgba(255,255,255,0.02); border-radius: 8px;
@@ -327,10 +367,19 @@
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
+  .empty-state {
+    min-height: 200px; display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: 13px; letter-spacing: 0.8px;
+    border: 1px solid var(--border-subtle); border-radius: 10px;
+    background: rgba(255,255,255,0.015);
+  }
+
   @media (max-width: 700px) {
     .agent-row { grid-template-columns: 1fr auto auto; gap: 8px; }
     .agent-row .disc-text, .agent-row .disc-empty { display: none; }
     .agent-portrait { width: 40px; height: 40px; }
+    .pull-row { grid-template-columns: 36px 1fr; }
+    .pull-row .pull-detail, .pull-row .pull-team { grid-column: 2; }
     .stats-grid { grid-template-columns: 1fr; }
     .session-row { grid-template-columns: 1fr; gap: 4px; }
   }
@@ -341,15 +390,16 @@
 <div class="header">
   <div class="header-top">
     <div>
-      <div class="title">Andres's ZZZ Dashboard</div>
+      <div class="title" id="page-title">ZZZ Dashboard</div>
       <div class="subtitle" id="subtitle">Loading...</div>
     </div>
     <div style="display:flex;align-items:center;gap:4px">
+      <div class="profile-switch" id="profile-switch"></div>
       <div class="tabs">
         <button class="tab active" onclick="switchTab('roster')">Agent Roster</button>
         <button class="tab" onclick="switchTab('audit')">Stat Audit</button>
       </div>
-      <button class="export-btn" id="export-btn" onclick="exportData()" title="Export updated data.json">EXPORT</button>
+      <button class="export-btn" id="export-btn" onclick="exportData()">EXPORT</button>
     </div>
   </div>
   <div class="filters" id="filters"></div>
@@ -363,13 +413,14 @@
 <script>
 const PORTRAIT_MAP = {
   "Ye Shunguang": "ye_shunguang.png", "Evelyn": "evelyn.png", "Seed": "Seed.png",
-  "Soldier 0 Anby": "soldier0anby.png", "Ellen": "ellen.png", "Jane Doe": "janedoe.png",
-  "Alice": "alice.png", "Miyabi": "miyabi.png", "Vivian": "vivian.png",
+  "Soldier 0 Anby": "soldier0anby.png", "Anby": "anbyarank.png", "Ellen": "ellen.png", "Jane Doe": "janedoe.png",
+  "Alice": "alice.png", "Miyabi": "miyabi.png", "Vivian": "vivian.png", "Yanagi": "yanagi.png",
   "Burnice": "burnice.png", "Aria": "aria.png", "Dialyn": "dialyn.png",
   "Ju Fufu": "jufufu.png", "Trigger": "trigger.png", "Lighter": "lighter.png",
   "Nangong Yu": "nangongyu.png", "Astra Yao": "astrayao.png", "Lucia": "lucia.png",
   "Yuzuha": "yuzuha.png", "Sunna": "sunna.png", "Zhao": "zhao.png",
-  "Yidhari": "yidhari.png", "Yixuan": "yixuan.png"
+  "Yidhari": "yidhari.png", "Yixuan": "yixuan.png", "Cissia": "cissia.png",
+  "Nicole": "nicole.png"
 };
 
 const ATTR_COLORS = {
@@ -406,7 +457,13 @@ function makePortraitFallback(name, attr, size, cssClass) {
   }, initials);
 }
 
-let AGENTS = [], AUDIT = [], SESSION = [], DATA_META = {}, isDirty = false;
+let AGENTS = [], AUDIT = [], SESSION = [], PULL_RECS = [], DATA_META = {}, isDirty = false;
+const PROFILE_CONFIG = {
+  andres: { label: "Andres", file: "data.json", exportFile: "data.json" },
+  wife: { label: "Wife", file: "wife-data.json", exportFile: "wife-data.json" }
+};
+const urlProfile = new URLSearchParams(window.location.search).get("profile");
+let currentProfile = PROFILE_CONFIG[urlProfile] ? urlProfile : "andres";
 const SECTIONS = ["ATTACK","ANOMALY","STUN","SUPPORT","RAPTURE"];
 const SECTION_ICONS = { ATTACK:"\u2694\uFE0F", ANOMALY:"\u2623\uFE0F", STUN:"\u26A1", SUPPORT:"\uD83D\uDCAB", RAPTURE:"\uD83D\uDD2E" };
 const STATUS_TEXT_COLORS = { green:"var(--green-text)", yellow:"var(--yellow-text)", red:"var(--red-text)", neutral:"#888" };
@@ -415,14 +472,23 @@ let currentTab = "roster", sectionFilter = "ALL", attrFilter = "ALL";
 let expandedSections = new Set(SECTIONS), sessionOpen = false;
 
 async function loadData() {
+  const profile = PROFILE_CONFIG[currentProfile];
   try {
-    const resp = await fetch('data.json');
+    document.getElementById('roster-view').innerHTML = '<div class="loading">Loading roster</div>';
+    document.getElementById('audit-view').innerHTML = '';
+    document.getElementById('subtitle').textContent = 'Loading ' + profile.label + "'s data...";
+    const resp = await fetch(profile.file);
     if (!resp.ok) throw new Error("HTTP " + resp.status);
     const data = await resp.json();
     DATA_META = data.meta || {};
     AGENTS = data.agents || [];
     AUDIT = data.audit || [];
     SESSION = data.sessions || [];
+    PULL_RECS = data.pullRecommendations || [];
+
+    const title = DATA_META.title || profile.label + "'s ZZZ Dashboard";
+    document.title = title;
+    document.getElementById('page-title').textContent = title;
 
     const updatedStr = DATA_META.updated || 'N/A';
     let relativeDate = updatedStr;
@@ -430,7 +496,8 @@ async function loadData() {
       const updated = new Date(updatedStr + 'T00:00:00');
       const now = new Date();
       const diffDays = Math.floor((now - updated) / (1000 * 60 * 60 * 24));
-      if (diffDays === 0) relativeDate = 'today';
+      if (diffDays < 0) relativeDate = updatedStr;
+      else if (diffDays === 0) relativeDate = 'today';
       else if (diffDays === 1) relativeDate = 'yesterday';
       else if (diffDays < 7) relativeDate = diffDays + ' days ago';
       else if (diffDays < 30) relativeDate = Math.floor(diffDays/7) + ' week' + (Math.floor(diffDays/7)>1?'s':'') + ' ago';
@@ -438,24 +505,28 @@ async function loadData() {
     } catch(ex) {}
 
     document.getElementById('subtitle').textContent =
-      AGENTS.length + ' S-Rank Agents \u00b7 All Level ' + (DATA_META.maxLevel || 60) + ' \u00b7 Updated ' + relativeDate;
+      AGENTS.length + ' Agents \u00b7 All Level ' + (DATA_META.maxLevel || 60) + ' \u00b7 Updated ' + relativeDate;
 
     isDirty = false;
+    renderProfileSwitch();
     updateExportBtn();
     renderFilters();
     renderRoster();
+    if (currentTab === 'audit') renderAudit();
   } catch (err) {
+    document.getElementById('page-title').textContent = profile.label + "'s ZZZ Dashboard";
     document.getElementById('roster-view').innerHTML =
-      '<div class="loading" style="color:var(--red-text)">Failed to load data.json \u2014 ' + err.message + '</div>';
+      '<div class="loading" style="color:var(--red-text)">Failed to load ' + profile.file + ' \u2014 ' + err.message + '</div>';
   }
 }
 
 function exportData() {
+  const profile = PROFILE_CONFIG[currentProfile];
   const exportObj = { meta: Object.assign({}, DATA_META, { updated: new Date().toISOString().split('T')[0] }), agents: AGENTS, audit: AUDIT, sessions: SESSION };
   const blob = new Blob([JSON.stringify(exportObj, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  a.href = url; a.download = 'data.json';
+  a.href = url; a.download = profile.exportFile;
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   URL.revokeObjectURL(url);
   isDirty = false; updateExportBtn();
@@ -469,6 +540,8 @@ function markDirty() { isDirty = true; updateExportBtn(); }
 function updateExportBtn() {
   const btn = document.getElementById('export-btn');
   if (!btn) return;
+  const profile = PROFILE_CONFIG[currentProfile];
+  btn.title = "Export updated " + profile.exportFile;
   const existingDot = btn.querySelector('.dirty-dot');
   if (isDirty && !existingDot) {
     const dot = document.createElement('span');
@@ -479,11 +552,37 @@ function updateExportBtn() {
   }
 }
 
+function renderProfileSwitch() {
+  const container = document.getElementById('profile-switch');
+  container.innerHTML = '';
+  Object.keys(PROFILE_CONFIG).forEach(function(key) {
+    const profile = PROFILE_CONFIG[key];
+    container.appendChild(e('button', {
+      class: "profile-btn" + (currentProfile === key ? " active" : ""),
+      onClick: function() { switchProfile(key); }
+    }, profile.label));
+  });
+}
+
+function switchProfile(profileKey) {
+  if (!PROFILE_CONFIG[profileKey] || profileKey === currentProfile) return;
+  currentProfile = profileKey;
+  sectionFilter = "ALL";
+  attrFilter = "ALL";
+  expandedSections = new Set(SECTIONS);
+  const url = new URL(window.location.href);
+  url.searchParams.set("profile", profileKey);
+  window.history.pushState({}, "", url);
+  renderProfileSwitch();
+  loadData();
+}
+
 function parseNum(str) { return parseFloat(String(str).replace(/[,%\u25b2 ]/g, '')); }
 
 function getStatStatus(stat) {
   const val = parseNum(stat.current);
   if (isNaN(val)) return "neutral";
+  if (stat.capMax && typeof stat.max === "number" && val > stat.max) return "yellow";
   if (val >= stat.min) return "green";
   if (val >= stat.min * 0.9) return "yellow";
   return "red";
@@ -545,6 +644,10 @@ function renderFilters() {
 function renderRoster() {
   const container = document.getElementById('roster-view');
   container.innerHTML = '';
+  if (!AGENTS.length) {
+    container.appendChild(e('div', { class:'empty-state' }, 'No agents loaded yet.'));
+    return;
+  }
   const filtered = AGENTS.filter(function(a) {
     if (sectionFilter !== "ALL" && a.section !== sectionFilter) return false;
     if (attrFilter !== "ALL" && a.attribute !== attrFilter) return false;
@@ -595,11 +698,41 @@ function renderRoster() {
     }
     container.appendChild(wrapper);
   });
+
+  renderPullRecommendations(container);
+}
+
+function renderPullRecommendations(container) {
+  if (!PULL_RECS.length || sectionFilter !== "ALL" || attrFilter !== "ALL") return;
+  const wrapper = e('div', { class:'pull-priority' });
+  wrapper.appendChild(e('div', { class:'section-header expanded' },
+    e('span', { class:'section-icon' }, '\u2606'),
+    e('span', { class:'section-label' }, 'Pull Priority'),
+    e('span', { class:'section-count' }, '(' + PULL_RECS.length + ')')
+  ));
+  const list = e('div', { class:'pull-list' });
+  PULL_RECS.forEach(function(rec) {
+    list.appendChild(e('div', { class:'pull-row' },
+      e('div', { class:'pull-rank' }, String(rec.rank)),
+      e('div', null,
+        e('div', { class:'pull-name' }, rec.name),
+        e('div', { class:'pull-priority-label' }, rec.priority)
+      ),
+      e('div', { class:'pull-detail' }, rec.why),
+      e('div', { class:'pull-team' }, rec.team)
+    ));
+  });
+  wrapper.appendChild(list);
+  container.appendChild(wrapper);
 }
 
 function renderAudit() {
   const container = document.getElementById('audit-view');
   container.innerHTML = '';
+  if (!AUDIT.length) {
+    container.appendChild(e('div', { class:'empty-state' }, 'No stat targets loaded yet.'));
+    return;
+  }
   AUDIT.forEach(function(a) { a.stats.forEach(function(s) { s._status = getStatStatus(s); }); a._calcPriority = recalcPriority(a); });
 
   const done = AUDIT.filter(function(a) { return a._calcPriority === "green"; }).length;
@@ -663,26 +796,28 @@ function renderAudit() {
     container.appendChild(card);
   });
 
-  const sessWrapper = e('div', { style:'margin-top:24px' });
-  sessWrapper.appendChild(e('button', {
-    class: "session-toggle " + (sessionOpen?'expanded':'collapsed'),
-    onClick: function() { sessionOpen = !sessionOpen; renderAudit(); }
-  },
-    e('span', { class:'session-label' }, 'Session Results \u2014 March 14, 2026'),
-    e('span', { class: "section-chevron" + (sessionOpen?" open":""), style:'margin-left:auto' }, '\u25bc')
-  ));
+  if (SESSION.length) {
+    const sessWrapper = e('div', { style:'margin-top:24px' });
+    sessWrapper.appendChild(e('button', {
+      class: "session-toggle " + (sessionOpen?'expanded':'collapsed'),
+      onClick: function() { sessionOpen = !sessionOpen; renderAudit(); }
+    },
+      e('span', { class:'session-label' }, DATA_META.sessionTitle || 'Session Results'),
+      e('span', { class: "section-chevron" + (sessionOpen?" open":""), style:'margin-left:auto' }, '\u25bc')
+    ));
 
-  if (sessionOpen) {
-    const sessBody = e('div', { class:'session-body' });
-    SESSION.forEach(function(s) {
-      sessBody.appendChild(e('div', { class:'session-row' },
-        e('span', { class:'session-row-label' }, s.label),
-        e('span', { style: "color:" + STATUS_TEXT_COLORS[s.status] }, s.detail)
-      ));
-    });
-    sessWrapper.appendChild(sessBody);
+    if (sessionOpen) {
+      const sessBody = e('div', { class:'session-body' });
+      SESSION.forEach(function(s) {
+        sessBody.appendChild(e('div', { class:'session-row' },
+          e('span', { class:'session-row-label' }, s.label),
+          e('span', { style: "color:" + STATUS_TEXT_COLORS[s.status] }, s.detail)
+        ));
+      });
+      sessWrapper.appendChild(sessBody);
+    }
+    container.appendChild(sessWrapper);
   }
-  container.appendChild(sessWrapper);
 }
 
 function startEdit(agentIdx, statIdx, cell, valueEl) {
