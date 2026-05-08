@@ -607,7 +607,7 @@
         },
         {
           "label": "Anomaly Mastery",
-          "optimal": "171+",
+          "optimal": "171 sheet / 200+ buffed",
           "current": "171",
           "min": 171
         },
@@ -619,27 +619,27 @@
         },
         {
           "label": "Energy Regen",
-          "optimal": "1.8+",
+          "optimal": "Comfort; sig covers ER",
           "current": "1.92",
           "min": 1.8
         },
         {
           "label": "CRIT Rate",
-          "optimal": "Not a priority in Miyabi teams",
+          "optimal": "Not a priority for Alice/Vivian",
           "current": "19.4%",
           "min": 0,
           "unit": "%"
         },
         {
           "label": "CRIT DMG",
-          "optimal": "Not a priority in Miyabi teams",
+          "optimal": "Not a priority for Alice/Vivian",
           "current": "50%",
           "min": 0,
           "unit": "%"
         }
       ],
       "before": null,
-      "delta": null,
+      "delta": "Alice/Vivian focus: ATK cap met; sig pushes AM over 200 in combat",
       "priority": "Farm Anomaly Proficiency",
       "priorityStatus": "red"
     },
