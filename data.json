@@ -268,30 +268,31 @@
       "stats": [
         {
           "label": "ATK",
-          "optimal": "1,800-2,000+",
+          "optimal": "3,000+",
           "current": "3,731",
-          "min": 1800
+          "min": 3000
         },
         {
           "label": "CR (sheet)",
-          "optimal": "50-55%",
+          "optimal": "45-50% sheet",
           "current": "48.2%",
-          "min": 50,
-          "max": 55,
+          "min": 45,
+          "max": 50,
+          "capMax": true,
           "unit": "%"
         },
         {
           "label": "CRIT DMG",
-          "optimal": "160-200%+",
+          "optimal": "180-200%+",
           "current": "142.8%",
-          "min": 160,
+          "min": 180,
           "unit": "%"
         }
       ],
       "before": null,
       "delta": null,
-      "priority": "Farm CD substats",
-      "priorityStatus": "yellow"
+      "priority": "Farm CRIT DMG",
+      "priorityStatus": "red"
     },
     {
       "name": "Evelyn",
@@ -299,22 +300,21 @@
       "stats": [
         {
           "label": "ATK",
-          "optimal": "1,800-2,000+",
+          "optimal": "2,600-3,400+",
           "current": "2,644",
-          "min": 1800
+          "min": 2600
         },
         {
           "label": "CR (sheet)",
-          "optimal": "~55%",
+          "optimal": "55%+ sheet",
           "current": "75.4%",
           "min": 55,
-          "max": 60,
           "unit": "%",
           "note": "▲"
         },
         {
           "label": "CRIT DMG",
-          "optimal": "160%+",
+          "optimal": "160-200%+",
           "current": "165.2%",
           "min": 160,
           "unit": "%",
@@ -323,8 +323,8 @@
       ],
       "before": "CD was 136.4%",
       "delta": "+28.8% CD",
-      "priority": "Swap 2pc → Branch&Blade",
-      "priorityStatus": "yellow"
+      "priority": "DONE — Core stats online",
+      "priorityStatus": "green"
     },
     {
       "name": "Seed",
@@ -332,29 +332,29 @@
       "stats": [
         {
           "label": "ATK",
-          "optimal": "1,800-2,000+",
+          "optimal": "2,700-3,000+",
           "current": "3,212",
-          "min": 1800
+          "min": 2700
         },
         {
           "label": "CRIT Rate",
-          "optimal": "70-80%",
+          "optimal": "75-90%+",
           "current": "65.8%",
-          "min": 70,
+          "min": 75,
           "unit": "%"
         },
         {
           "label": "CRIT DMG",
-          "optimal": "150-170%+",
+          "optimal": "110-140%+",
           "current": "150.8%",
-          "min": 150,
+          "min": 110,
           "unit": "%"
         }
       ],
       "before": null,
       "delta": null,
-      "priority": "Minor CR tuning",
-      "priorityStatus": "yellow"
+      "priority": "Farm CRIT Rate",
+      "priorityStatus": "red"
     },
     {
       "name": "Ellen",
@@ -362,29 +362,29 @@
       "stats": [
         {
           "label": "ATK",
-          "optimal": "1,800-2,000+",
+          "optimal": "2,600-3,000+",
           "current": "2,971",
-          "min": 1800
+          "min": 2600
         },
         {
           "label": "CRIT Rate",
-          "optimal": "70-80%",
+          "optimal": "90-100%",
           "current": "39.4%",
-          "min": 70,
+          "min": 90,
           "unit": "%"
         },
         {
           "label": "CRIT DMG",
-          "optimal": "150-180%+",
+          "optimal": "120-180%+",
           "current": "136.4%",
-          "min": 150,
+          "min": 120,
           "unit": "%"
         }
       ],
       "before": null,
       "delta": null,
       "priority": "Benched — low priority",
-      "priorityStatus": "neutral"
+      "priorityStatus": "red"
     },
     {
       "name": "Jane Doe",
@@ -392,27 +392,27 @@
       "stats": [
         {
           "label": "ATK",
-          "optimal": "1,600-1,800+",
+          "optimal": "2,300-2,800+",
           "current": "2,157",
-          "min": 1600
+          "min": 2300
         },
         {
           "label": "Anomaly Prof.",
-          "optimal": "250-310",
+          "optimal": "375-420+ in combat",
           "current": "335",
-          "min": 250
+          "min": 375
         },
         {
           "label": "Anom. Mastery",
-          "optimal": "150+",
+          "optimal": "192+",
           "current": "192",
-          "min": 150
+          "min": 192
         }
       ],
       "before": null,
-      "delta": null,
-      "priority": "DONE — Perfect build",
-      "priorityStatus": "green"
+      "delta": "Target AP is in-combat; confirm buffed value before heavy refarm",
+      "priority": "Farm AP / confirm in-combat AP",
+      "priorityStatus": "red"
     },
     {
       "name": "Alice",
@@ -420,27 +420,27 @@
       "stats": [
         {
           "label": "ATK",
-          "optimal": "1,600-1,800+",
+          "optimal": "2,600-2,900+",
           "current": "2,769",
-          "min": 1600
+          "min": 2600
         },
         {
           "label": "Anomaly Prof.",
-          "optimal": "250-310",
+          "optimal": "330-420+",
           "current": "300",
-          "min": 250
+          "min": 330
         },
         {
           "label": "Anom. Mastery",
-          "optimal": "150+",
+          "optimal": "184+",
           "current": "195",
-          "min": 150
+          "min": 184
         }
       ],
       "before": null,
       "delta": null,
-      "priority": "DONE — Perfect build",
-      "priorityStatus": "green"
+      "priority": "Farm AP",
+      "priorityStatus": "red"
     },
     {
       "name": "Miyabi",
@@ -448,20 +448,20 @@
       "stats": [
         {
           "label": "ATK",
-          "optimal": "1,800-2,000+",
+          "optimal": "2,500-3,600+",
           "current": "2,859",
-          "min": 1800
+          "min": 2500
         },
         {
           "label": "CRIT Rate",
-          "optimal": "75-85%",
+          "optimal": "75-95%",
           "current": "80.2%",
           "min": 75,
           "unit": "%"
         },
         {
           "label": "CRIT DMG",
-          "optimal": "150-180%+",
+          "optimal": "150-190%",
           "current": "109.2%",
           "min": 150,
           "unit": "%",
@@ -470,7 +470,7 @@
       ],
       "before": "CD was 94.8%",
       "delta": "+14.4% CD",
-      "priority": "HIGH — Farm Branch&Blade",
+      "priority": "Farm CRIT DMG",
       "priorityStatus": "red"
     },
     {
@@ -501,8 +501,8 @@
       ],
       "before": "CD was 78.8%",
       "delta": "+33.6% CD",
-      "priority": "Farm CD substats",
-      "priorityStatus": "yellow"
+      "priority": "Farm CRIT Rate and CRIT DMG",
+      "priorityStatus": "red"
     },
     {
       "name": "Yidhari",
@@ -510,29 +510,29 @@
       "stats": [
         {
           "label": "Sheer Force",
-          "optimal": "2,000-2,300",
+          "optimal": "2,400-2,600",
           "current": "2,445",
-          "min": 2000
+          "min": 2400
         },
         {
           "label": "CRIT Rate",
-          "optimal": "75-85%",
+          "optimal": "58.6-65.8% sheet",
           "current": "75.4%",
-          "min": 75,
+          "min": 58.6,
           "unit": "%"
         },
         {
           "label": "CRIT DMG",
-          "optimal": "140-160%",
+          "optimal": "120-150%",
           "current": "98%",
-          "min": 140,
+          "min": 120,
           "unit": "%",
           "note": "▲"
         }
       ],
       "before": "CD was 83.6%",
       "delta": "+14.4% CD",
-      "priority": "HIGH — Farm Branch&Blade",
+      "priority": "Farm CRIT DMG",
       "priorityStatus": "red"
     },
     {
@@ -541,59 +541,59 @@
       "stats": [
         {
           "label": "ATK",
-          "optimal": "2,500-3,000+",
+          "optimal": "2,600-2,900+",
           "current": "2,875",
-          "min": 2500
+          "min": 2600
         },
         {
           "label": "Anom. Mastery",
-          "optimal": "250+ (sheet cap)",
+          "optimal": "184-244",
           "current": "253",
-          "min": 250,
+          "min": 184,
           "note": "In-combat 300+ via sig (30% AM) + set bonuses"
         },
         {
           "label": "Anomaly Prof.",
-          "optimal": "310-360 (sheet)",
+          "optimal": "330-420+",
           "current": "316",
-          "min": 310,
+          "min": 330,
           "note": "In-combat ~442 via sig (+90) + Shining Aria 4pc (+36). Target: 400-500"
         }
       ],
       "before": "AP was 310 | AM was incorrectly flagged red",
-      "delta": "+6 AP farmed | AM target corrected (253 = sheet cap, not deficit)",
-      "priority": "Push AP substats on discs",
+      "delta": "In-combat AP is higher from sig/set; sheet AP still has room",
+      "priority": "Farm AP substats",
       "priorityStatus": "yellow"
     },
     {
       "name": "Nangong Yu",
-      "type": "Anomaly Stunner (AM→Impact conversion)",
+      "type": "Anomaly Stunner",
       "stats": [
         {
           "label": "Anom. Mastery",
           "optimal": "200+",
           "current": "211",
           "min": 200,
-          "note": "Each AM point over 110 = +1 Impact. 211 AM = +101 bonus Impact in combat"
+          "note": "AM converts to Impact"
         },
         {
           "label": "Anomaly Prof.",
           "optimal": "320-400",
           "current": "323",
           "min": 320,
-          "note": "At floor. Sig W1 adds ~150 AP in combat. Push substats toward 350+"
+          "note": "At floor"
         },
         {
           "label": "Impact",
-          "optimal": "220+ (in-combat)",
-          "current": "120 (sheet) / ~221 (in-combat)",
-          "min": 120,
-          "note": "Sheet value misleading — AM conversion adds +101. Do NOT build Impact directly"
+          "optimal": "220+",
+          "current": "221",
+          "min": 220,
+          "note": "Converted"
         }
       ],
-      "before": "AM was 207 | AP was 305 | Sig was below 60",
-      "delta": "+4 AM | +18 AP | Sig leveled to 60 | Audit reframed for AM→Impact conversion",
-      "priority": "Push AP substats toward 350+",
+      "before": "Sheet Impact: 120",
+      "delta": "AM conversion puts Impact around 221",
+      "priority": "Good — AP next",
       "priorityStatus": "yellow"
     }
   ],
