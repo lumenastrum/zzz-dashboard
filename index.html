@@ -376,6 +376,21 @@
   .export-btn:hover { background: rgba(196,181,253,0.2); }
   .export-btn.saved { border-color: var(--green-text); color: var(--green-text); background: rgba(46,125,50,0.15); }
 
+  .sync-status {
+    min-width: 62px;
+    margin-left: 8px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: right;
+  }
+  .sync-status.saving { color: var(--yellow-text); }
+  .sync-status.saved { color: var(--green-text); }
+  .sync-status.error { color: var(--red-text); }
+  .sync-status.local { color: #64b5f6; }
+
   .dirty-dot {
     width: 8px; height: 8px; border-radius: 50%;
     background: var(--yellow-text); display: inline-block;
@@ -429,6 +444,7 @@
         <button class="tab" onclick="switchTab('audit')">Stat Audit</button>
       </div>
       <button class="export-btn" id="export-btn" onclick="exportData()">EXPORT</button>
+      <div class="sync-status" id="sync-status">LOCAL</div>
     </div>
   </div>
   <div class="filters" id="filters"></div>
@@ -439,7 +455,15 @@
   <div id="audit-view" class="hidden"></div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+const SUPABASE_URL = "https://ayhrqkxdeecybjhmgdoq.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF5aHJxa3hkZWVjeWJqaG1nZG9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyOTI0NjcsImV4cCI6MjA5Mzg2ODQ2N30.GN-y9xEyNfQUVUXCqOGJC5cpN35X7B8PpOlFJPn10A8";
+const SUPABASE_TABLE = "dashboard_profiles";
+const supabaseClient = window.supabase
+  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+  : null;
+
 const PORTRAIT_MAP = {
   "Ye Shunguang": "ye_shunguang.png", "Evelyn": "evelyn.png", "Seed": "Seed.png",
   "Soldier 0 Anby": "soldier0anby.png", "Anby": "anbyarank.png", "Ellen": "ellen.png", "Jane Doe": "janedoe.png",
@@ -487,6 +511,7 @@ function makePortraitFallback(name, attr, size, cssClass) {
 }
 
 let AGENTS = [], AUDIT = [], SESSION = [], PULL_RECS = [], DATA_META = {}, isDirty = false;
+let syncTimer = null, syncProfile = null, isSaving = false, loadToken = 0;
 const PROFILE_CONFIG = {
   andres: { label: "Andres", file: "data.json", exportFile: "data.json" },
   wife: { label: "Wife", file: "wife-data.json", exportFile: "wife-data.json" }
@@ -500,20 +525,89 @@ const STATUS_TEXT_COLORS = { green:"var(--green-text)", yellow:"var(--yellow-tex
 let currentTab = "roster", sectionFilter = "ALL", attrFilter = "ALL";
 let expandedSections = new Set(SECTIONS), sessionOpen = false;
 
+function todayISO() {
+  return new Date().toISOString().split('T')[0];
+}
+
+function buildDataObject(refreshUpdated) {
+  return {
+    meta: Object.assign({}, DATA_META, refreshUpdated ? { updated: todayISO() } : {}),
+    agents: AGENTS,
+    audit: AUDIT,
+    pullRecommendations: PULL_RECS,
+    sessions: SESSION
+  };
+}
+
+function applyDashboardData(data) {
+  DATA_META = data.meta || {};
+  AGENTS = data.agents || [];
+  AUDIT = data.audit || [];
+  SESSION = data.sessions || [];
+  PULL_RECS = data.pullRecommendations || [];
+}
+
+function setSyncStatus(status, text) {
+  const el = document.getElementById('sync-status');
+  if (!el) return;
+  el.className = "sync-status" + (status ? " " + status : "");
+  el.textContent = text || "";
+}
+
+async function loadSupabaseProfile(profileKey) {
+  if (!supabaseClient) return null;
+  const result = await supabaseClient
+    .from(SUPABASE_TABLE)
+    .select("data")
+    .eq("profile", profileKey)
+    .maybeSingle();
+  if (result.error) throw result.error;
+  return result.data ? result.data.data : null;
+}
+
+async function loadJsonProfile(profile) {
+  const resp = await fetch(profile.file);
+  if (!resp.ok) throw new Error("HTTP " + resp.status);
+  return resp.json();
+}
+
+async function seedSupabaseProfile(profileKey, data) {
+  if (!supabaseClient) return;
+  await supabaseClient
+    .from(SUPABASE_TABLE)
+    .upsert({
+      profile: profileKey,
+      data: data,
+      updated_at: new Date().toISOString()
+    }, { onConflict: "profile" });
+}
+
 async function loadData() {
   const profile = PROFILE_CONFIG[currentProfile];
+  const thisLoad = ++loadToken;
+  clearTimeout(syncTimer);
   try {
     document.getElementById('roster-view').innerHTML = '<div class="loading">Loading roster</div>';
     document.getElementById('audit-view').innerHTML = '';
     document.getElementById('subtitle').textContent = 'Loading ' + profile.label + "'s data...";
-    const resp = await fetch(profile.file);
-    if (!resp.ok) throw new Error("HTTP " + resp.status);
-    const data = await resp.json();
-    DATA_META = data.meta || {};
-    AGENTS = data.agents || [];
-    AUDIT = data.audit || [];
-    SESSION = data.sessions || [];
-    PULL_RECS = data.pullRecommendations || [];
+    setSyncStatus("saving", "LOAD");
+
+    let data = null;
+    let source = "local";
+    try {
+      data = await loadSupabaseProfile(currentProfile);
+      if (data) source = "live";
+    } catch (err) {
+      console.warn("Supabase load failed; falling back to static JSON.", err);
+    }
+    if (!data) {
+      data = await loadJsonProfile(profile);
+      if (supabaseClient) seedSupabaseProfile(currentProfile, data).catch(function(err) {
+        console.warn("Supabase seed skipped.", err);
+      });
+    }
+    if (thisLoad !== loadToken) return;
+    applyDashboardData(data);
 
     const title = DATA_META.title || profile.label + "'s ZZZ Dashboard";
     document.title = title;
@@ -537,8 +631,10 @@ async function loadData() {
       AGENTS.length + ' Agents \u00b7 All Level ' + (DATA_META.maxLevel || 60) + ' \u00b7 Updated ' + relativeDate;
 
     isDirty = false;
+    syncProfile = currentProfile;
     renderProfileSwitch();
     updateExportBtn();
+    setSyncStatus(source === "live" ? "saved" : "local", source === "live" ? "LIVE" : "LOCAL");
     renderFilters();
     renderRoster();
     if (currentTab === 'audit') renderAudit();
@@ -551,7 +647,7 @@ async function loadData() {
 
 function exportData() {
   const profile = PROFILE_CONFIG[currentProfile];
-  const exportObj = { meta: Object.assign({}, DATA_META, { updated: new Date().toISOString().split('T')[0] }), agents: AGENTS, audit: AUDIT, sessions: SESSION };
+  const exportObj = buildDataObject(true);
   const blob = new Blob([JSON.stringify(exportObj, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -564,7 +660,56 @@ function exportData() {
   setTimeout(function() { btn.classList.remove('saved'); btn.textContent = 'EXPORT'; }, 2000);
 }
 
-function markDirty() { isDirty = true; updateExportBtn(); }
+function markDirty() {
+  isDirty = true;
+  updateExportBtn();
+  scheduleSave();
+}
+
+function scheduleSave() {
+  clearTimeout(syncTimer);
+  setSyncStatus("saving", "SAVE");
+  syncTimer = setTimeout(saveCurrentProfile, 650);
+}
+
+async function saveCurrentProfile() {
+  if (!supabaseClient) {
+    setSyncStatus("local", "LOCAL");
+    return;
+  }
+  if (isSaving) {
+    scheduleSave();
+    return;
+  }
+  const profileKey = currentProfile;
+  const data = buildDataObject(true);
+  DATA_META = data.meta;
+  isSaving = true;
+  try {
+    const result = await supabaseClient
+      .from(SUPABASE_TABLE)
+      .upsert({
+        profile: profileKey,
+        data: data,
+        updated_at: new Date().toISOString()
+      }, { onConflict: "profile" });
+    if (result.error) throw result.error;
+    if (profileKey === currentProfile) {
+      isDirty = false;
+      syncProfile = profileKey;
+      updateExportBtn();
+      setSyncStatus("saved", "SAVED");
+      setTimeout(function() {
+        if (!isDirty && syncProfile === currentProfile) setSyncStatus("saved", "LIVE");
+      }, 1200);
+    }
+  } catch (err) {
+    console.error("Supabase save failed.", err);
+    setSyncStatus("error", "ERROR");
+  } finally {
+    isSaving = false;
+  }
+}
 
 function updateExportBtn() {
   const btn = document.getElementById('export-btn');
