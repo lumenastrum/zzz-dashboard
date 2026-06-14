@@ -638,7 +638,7 @@ Physical Attack hypercarry / crit carry. Full Physical synergy.
 
 ### Why it matters
 
-- **BENCHMARKED 2026-06-14: 41,506 total score (36,506 damage), 95.1% YSG damage share.** Highest single-room score of the entire session.
+- **BENCHMARKED 2026-06-14: 42,138 total score (37,138 damage, optimized run), 95.1% YSG damage share.** Highest single-room score of the entire session.
 - Beat Evelyn M3/W1 (33,971 in the same room with Dialyn + Astra) by **7,535 points** in a direct head-to-head. This is not marginal — it is a canyon.
 - Ye Shunguang is consistently the highest-scoring carry across multiple sessions: 46,920 (DA Cycle 1), 42,104 (Shiyu S+ March 21), 41,506 (Shiyu June 14). Pattern is documented and undeniable.
 - Sunna (34,500 Prydwen analytics — highest on roster) + Dialyn + YSG = full Physical squad where every member catches Physical room buffs.
@@ -738,15 +738,15 @@ These packages are designed for Stage 5 / Deadly Assault style allocation where 
 ```text
 1. Miyabi / Nangong Yu / Astra Yao        (37,190)
 2. Yixuan / Lucia / Ju Fufu               (33,501)
-3. Ye Shunguang / Dialyn / Sunna          (41,506)
+3. Ye Shunguang / Dialyn / Sunna          (42,138)
 ```
 
-**BENCHMARKED TOTAL: 112,197** (2026-06-14 Shiyu Critical Node)
+**BENCHMARKED TOTAL: 112,829** (2026-06-14 Shiyu Critical Node, Room 3 optimized on second run)
 
 Strengths:
 
 - Highest proven total across all tested configurations.
-- YSG/Dialyn/Sunna is the highest single-room score (41,506) across all sessions documented.
+- YSG/Dialyn/Sunna is the highest single-room score (42,138 optimized, 41,506 first run) across all sessions documented.
 - Astra goes to Miyabi where hybrid scaling gets maximum value — proven 4,332 point advantage over Yuzuha.
 - Clean lockout: no duplicate agents, every support allocated to where they give maximum marginal gain.
 - Evelyn M3/W1, Vivian M2/W1, Yuzuha M0/W1, Alice M1/W1 all on bench = deep flex reserve.
@@ -1016,7 +1016,7 @@ Use if Room 1's Abloom/Angels/Ether angle matters more than the Ice modifier and
 10. Seed requires another Attack Agent; use Cissia/other Attack partner, not Seed/Trigger/Astra by default.
 11. Zhao's current analytics are high, but Andres's Zhao is low investment and Miyabi/Zhao is sussy until specifically justified. Treat Zhao as promising utility, not automatic carry.
 12. If an enemy resists the primary damage attribute, downgrade the shell unless the room buff overwhelmingly compensates.
-13. **YSG is the silent hypercarry. In Physical-friendly rooms, she outscores Evelyn M3 consistently. Stop defaulting to Evelyn.** Benchmarked: 46,920 (DA), 42,104 (Shiyu March), 41,506 (Shiyu June). Pattern is structural, not lucky.
+13. **YSG is the silent hypercarry. In Physical-friendly rooms, she outscores Evelyn M3 consistently. Stop defaulting to Evelyn.** Benchmarked: 46,920 (DA), 42,104 (Shiyu March), 42,138 (Shiyu June). Pattern is structural, not lucky.
 14. **Room CRIT DMG buffs patch YSG's CD deficit for free.** Always check room modifiers before benching her for stats.
 15. **Stun windows > Disorder for hybrid carries.** Nangong + Astra outperformed Vivian + Yuzuha for Miyabi by 4,332 points. Burst > sustain when the carry scales off ATK/CRIT.
 
@@ -1082,7 +1082,8 @@ Use if Room 1's Abloom/Angels/Ether angle matters more than the Ice modifier and
 | R2 | Yixuan / Lucia / Dialyn | **33,901** | 28,901 | 5,000 | **Dialyn wins.** Sheer Force 400% scaling. |
 | R2 | Yixuan / Lucia / Ju Fufu | 33,501 | 28,501 | 5,000 | Ju Fufu CRIT buffs insufficient. |
 | R3 | Evelyn / Dialyn / Astra | 33,971 | 28,971 | 5,000 | Evelyn M3 baseline. Dialyn 15.5%. |
-| R3 | YSG / Dialyn / Sunna | **41,506** | 36,506 | 5,000 | **Gut call. Session-defining.** |
+| R3 | YSG / Dialyn / Sunna | 41,506 | 36,506 | 5,000 | Gut call. Session-defining. |
+| R3 | YSG / Dialyn / Sunna (run 2) | **42,138** | 37,138 | 5,000 | **"I can't help myself." +632 from mechanical optimization.** |
 
 **Key session findings:**
 
