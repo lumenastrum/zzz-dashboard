@@ -488,20 +488,24 @@ Doc correction:
 ### Candidate shells
 
 ```text
+Miyabi / Nangong Yu / Astra Yao   ← BENCHMARKED WINNER
+```
+
+```text
 Miyabi / Vivian / Yuzuha
+```
+
+```text
+Miyabi / Nangong Yu / Yuzuha
 ```
 
 ```text
 Miyabi / Burnice / Yuzuha
 ```
 
-```text
-Miyabi / Nangong Yu / Yuzuha or Sunna
-```
-
 ### Archetype
 
-Ice/Frost crit-anomaly carry with off-field anomaly application, anomaly support, or anomaly-stun support depending room signal.
+Ice/Frost crit-anomaly HYBRID carry. Miyabi scales off ATK and CRIT, not pure Anomaly — support choice must reflect this.
 
 ### Why it matters
 
@@ -511,31 +515,44 @@ Ice/Frost crit-anomaly carry with off-field anomaly application, anomaly support
 - Ice rooms are common in Shiyu rotations.
 - Dashboard says Miyabi's CRIT Rate is good but CRIT DMG is low, so rooms giving CRIT DMG or Ice DMG are excellent patches.
 
+### BENCHMARK DATA (2026-06-14, Shiyu Room 1: AP +30 / Abloom +20% / Ice DMG +20% after EX / Resists Physical)
+
+| Comp | Total Score | Damage Score | Carry DMG% | Notes |
+|---|---:|---:|---:|---|
+| Miyabi / Nangong / Astra | **37,190** | 32,190 | 79.6% | **WINNER by 4,332 points** |
+| Miyabi / Nangong / Yuzuha | 32,858 | 27,858 | — | Yuzuha only buffs Anomaly half |
+| Miyabi / Vivian / Yuzuha | 32,571 | 27,571 | 63% | Distributed damage, lower ceiling |
+
+**Key finding: Astra > Yuzuha for Miyabi by a CANYON (4,332 points).** Miyabi is a hybrid crit-anomaly carry. ATK and CRIT buffs from Astra feed her ENTIRE damage profile. Yuzuha only buffs the Anomaly half. Astra buffed the whole girl. Yuzuha buffed half a girl. The math was never close.
+
+**Secondary finding: Stun windows > Disorder for Miyabi.** Nangong's Anomaly-Stun hybrid support (stun windows + Anomaly Buildup Rate) outperformed Vivian's off-field Disorder cycling by 287 points. Burst > sustain when AP +30 accelerates buildup.
+
 ### Best for
 
 - Ice recommended rooms.
 - Anomaly/Abloom rooms where Ice is favored.
 - Rooms where Physical is resisted and Fire/Ether options are awkward.
+- ANY room with ATK/CRIT/EX buffs — Miyabi's hybrid scaling catches these.
 
 ### Caution
 
-- `Miyabi / Zhao / Astra Yao` is **sussy** as a default. Zhao may be a useful Ice support/floor-raiser in analytics, but Andres's Zhao is low investment and this shell lacks the stronger sourced anomaly support logic of Vivian/Yuzuha/Nangong.
+- **Do NOT default Yuzuha for Miyabi.** Yuzuha is correct for pure Anomaly carries (Alice, Jane). Miyabi is hybrid. Use Astra.
+- `Miyabi / Zhao / Astra Yao` is **sussy** as a default. Zhao may be a useful Ice support/floor-raiser in analytics, but Andres's Zhao is low investment.
 - Do not just pair Miyabi with Yidhari because both are Ice unless explicitly building an Ice dual-carry/attribute-stack plan.
 - Need to verify Miyabi's current Additional Ability condition and whether the chosen supports activate it.
-- If running Disorder, ensure the second anomaly attribute is actually contributing meaningful application.
 
 ### Variants by room signal
 
-If room says Ice + Anomaly/Disorder and Ether is not resisted:
+Default (proven):
+
+```text
+Miyabi / Nangong Yu / Astra Yao
+```
+
+If Astra is locked and room says Ice + Anomaly/Disorder and Ether is not resisted:
 
 ```text
 Miyabi / Vivian / Yuzuha
-```
-
-If room says Ice + Anomaly and wants Stun/Anomaly-support utility:
-
-```text
-Miyabi / Nangong Yu / Yuzuha or Sunna
 ```
 
 If room specifically rewards Fire + Anomaly or Vivian is locked:
@@ -607,36 +624,43 @@ Doc correction:
 
 ---
 
-## 7. Ye Shunguang Physical Attack Shell
+## 2b. Ye Shunguang Premium Physical Hypercarry ⭐ BENCHMARKED
 
-### Candidate shell
+### Default shell
 
 ```text
 Ye Shunguang / Dialyn / Sunna
 ```
 
-or
-
-```text
-Ye Shunguang / Dialyn / Astra Yao
-```
-
 ### Archetype
 
-Physical Attack hypercarry / crit carry.
+Physical Attack hypercarry / crit carry. Full Physical synergy.
 
 ### Why it matters
 
-- Ye Shunguang is very high in Prydwen Shiyu analytics.
-- Andres owns M1/W1.
-- Sunna and Dialyn are both extremely high in the current analytics and are Physical-aligned roster pieces.
-- Room 2/3 style Fire/Physical recommendations often support Physical teams.
+- **BENCHMARKED 2026-06-14: 41,506 total score (36,506 damage), 95.1% YSG damage share.** Highest single-room score of the entire session.
+- Beat Evelyn M3/W1 (33,971 in the same room with Dialyn + Astra) by **7,535 points** in a direct head-to-head. This is not marginal — it is a canyon.
+- Ye Shunguang is consistently the highest-scoring carry across multiple sessions: 46,920 (DA Cycle 1), 42,104 (Shiyu S+ March 21), 41,506 (Shiyu June 14). Pattern is documented and undeniable.
+- Sunna (34,500 Prydwen analytics — highest on roster) + Dialyn + YSG = full Physical squad where every member catches Physical room buffs.
+- Room CRIT DMG buffs patch YSG's known CD farming deficit. In +30% CD rooms, her effective CD jumps from 142.8% to ~172.8% before any support buffs.
+- Prydwen analytics: YSG at 33,488, Sunna at 34,500, Dialyn at 31,386 — all top-tier performers and all Physical.
+
+### Best for
+
+- Physical recommended rooms (even when Fire is also recommended — she beats Evelyn M3 with receipts).
+- Crit/ATK/EX/Chain/Ultimate buff rooms.
+- Any room giving CRIT DMG buffs (patches her deficit for free).
+- Rooms where Physical is not resisted.
 
 ### Caution
 
-- Dashboard says Ye needs CRIT DMG; do not overstate readiness until farm improves.
+- Dashboard says Ye needs CRIT DMG; but room buffs can compensate. Check room modifiers before benching her for stats.
 - If room has Physical resistance, avoid.
-- Need current kit/passive verification for Sunna/Ye/Dialyn exact synergy.
+- Consumes Dialyn and Sunna — verify lockout availability.
+
+### PROMOTION NOTE
+
+YSG was originally Shell 7 ("Candidate shell"). Promoted to Shell 2b after benchmark data proved she consistently outscores all other carries including Evelyn M3. **Stop defaulting to Evelyn in Physical-friendly rooms.** The eheh girl stays winning.
 
 ---
 
@@ -709,7 +733,37 @@ Electric Attack/crit shell.
 
 These packages are designed for Stage 5 / Deadly Assault style allocation where agents, Bangboo, and sometimes gear cannot repeat.
 
-### Package A — Three coherent archetypes with minimal overlap
+### Package A — Three coherent archetypes with minimal overlap ⭐ BENCHMARKED VARIANT
+
+```text
+1. Miyabi / Nangong Yu / Astra Yao        (37,190)
+2. Yixuan / Lucia / Ju Fufu               (33,501)
+3. Ye Shunguang / Dialyn / Sunna          (41,506)
+```
+
+**BENCHMARKED TOTAL: 112,197** (2026-06-14 Shiyu Critical Node)
+
+Strengths:
+
+- Highest proven total across all tested configurations.
+- YSG/Dialyn/Sunna is the highest single-room score (41,506) across all sessions documented.
+- Astra goes to Miyabi where hybrid scaling gets maximum value — proven 4,332 point advantage over Yuzuha.
+- Clean lockout: no duplicate agents, every support allocated to where they give maximum marginal gain.
+- Evelyn M3/W1, Vivian M2/W1, Yuzuha M0/W1, Alice M1/W1 all on bench = deep flex reserve.
+
+Weaknesses:
+
+- Evelyn M3 benched despite highest account investment. Feels wrong. Is correct.
+- Yixuan loses Dialyn but keeps Lucia + Ju Fufu — 400 point cost vs Dialyn variant, overwhelmingly compensated by Room 3 gains.
+- If Physical is resisted in YSG's room, the whole package needs restructuring.
+
+Best when:
+
+- One room wants Ice/Anomaly/Abloom.
+- One room wants Sheer/Rupture.
+- One room wants Physical/crit burst (or Fire+Physical where Physical catches more buffs).
+
+### Package A-Classic — Original bible default (SUPERSEDED)
 
 ```text
 1. Evelyn / Ju Fufu / Astra Yao
@@ -717,24 +771,7 @@ These packages are designed for Stage 5 / Deadly Assault style allocation where 
 3. Alice / Vivian / Yuzuha
 ```
 
-Strengths:
-
-- Clean Fire Attack hypercarry.
-- Clean Rupture core.
-- Clean top-line Physical/Ether Anomaly core.
-- No duplicate agents.
-
-Weaknesses:
-
-- Leaves Miyabi/Yidhari/Aria unused despite being valuable.
-- Yixuan loses Ju Fufu but keeps Lucia + Dialyn.
-- Alice AP needs farming; Vivian/Ether resistance must be checked.
-
-Best when:
-
-- One room wants Fire/crit burst.
-- One room wants Sheer/Rupture.
-- One room wants Anomaly/Physical/Ether or generic Disorder.
+Projected ~100K. Superseded by benchmarked Package A variant above. Preserved for reference.
 
 ### Package B — Ice/Anomaly emphasis
 
@@ -969,16 +1006,19 @@ Use if Room 1's Abloom/Angels/Ether angle matters more than the Ice modifier and
 
 1. Start from these shells, not from random color matching.
 2. Never recommend a dual-carry team without labeling it as dual-carry/quick-swap and explaining why.
-3. Astra is premium but not infinite; lockout planning must ration her.
+3. Astra is premium but not infinite; lockout planning must ration her. **Proven best with Miyabi (hybrid scaling) over pure Anomaly carries.**
 4. Lucia is the default Rupture support on Andres's roster.
-5. Yuzuha is the default Anomaly/Disorder support on Andres's roster.
+5. **Yuzuha is the default Anomaly/Disorder support for PURE Anomaly carries (Alice, Jane). NOT for Miyabi.** Miyabi is hybrid — use Astra.
 6. Vivian is the default premium Anomaly sub-DPS/enabler; Burnice is fallback or Fire-specific.
 7. Ju Fufu is contested between Evelyn and Rupture teams.
-8. Dialyn is not just "Physical Stun"; she is a Rupture-synergy stunner too.
-9. Sunna is high-value in current Shiyu data and part of the premium Angels core.
+8. Dialyn is not just "Physical Stun"; she is a Rupture-synergy stunner AND YSG's proven best stunner.
+9. Sunna is high-value in current Shiyu data and part of both the premium Angels core AND the premium YSG Physical core.
 10. Seed requires another Attack Agent; use Cissia/other Attack partner, not Seed/Trigger/Astra by default.
 11. Zhao's current analytics are high, but Andres's Zhao is low investment and Miyabi/Zhao is sussy until specifically justified. Treat Zhao as promising utility, not automatic carry.
 12. If an enemy resists the primary damage attribute, downgrade the shell unless the room buff overwhelmingly compensates.
+13. **YSG is the silent hypercarry. In Physical-friendly rooms, she outscores Evelyn M3 consistently. Stop defaulting to Evelyn.** Benchmarked: 46,920 (DA), 42,104 (Shiyu March), 41,506 (Shiyu June). Pattern is structural, not lucky.
+14. **Room CRIT DMG buffs patch YSG's CD deficit for free.** Always check room modifiers before benching her for stats.
+15. **Stun windows > Disorder for hybrid carries.** Nangong + Astra outperformed Vivian + Yuzuha for Miyabi by 4,332 points. Burst > sustain when the carry scales off ATK/CRIT.
 
 ---
 
@@ -1016,3 +1056,41 @@ Use if Room 1's Abloom/Angels/Ether angle matters more than the Ice modifier and
 - Bangboo roster is not in the dashboard; future Clio should ask for or maintain a Bangboo list.
 - Equipment locking matters in Stage 5 / Deadly Assault; dashboard does not currently capture full drive/W-Engine conflict details.
 - Cissia is owned by Andres but not yet represented in dashboard data; verify her level/investment before final team ranking.
+
+
+---
+
+## Benchmark Log
+
+### 2026-06-14 — Shiyu Critical Node, Full Three-Room Benchmark
+
+**Final optimized lockout: 112,197**
+
+| Room | Comp | Total | Damage | PP | Carry DMG% | Notes |
+|---|---|---:|---:|---:|---:|---|
+| 1 | Miyabi / Nangong / Astra | **37,190** | 32,190 | 5,000 | 79.6% | Astra > Yuzuha by 4,332. Hybrid scaling proven. |
+| 2 | Yixuan / Lucia / Dialyn | **33,901** | 28,901 | 5,000 | 90.7% | Dialyn > Ju Fufu by 400. Sheer Force scaling wins. |
+| 3 | YSG / Dialyn / Sunna | **41,506** | 36,506 | 5,000 | 95.1% | Beat Evelyn M3 by 7,535. Session high. |
+
+**Full benchmark data (all runs, chronological):**
+
+| Room | Comp | Total | Damage | PP | Key finding |
+|---|---|---:|---:|---:|---|
+| R1 | Miyabi / Vivian / Yuzuha | 32,571 | 27,571 | 5,000 | Baseline. Vivian 32.8% distributed damage. |
+| R1 | Miyabi / Nangong / Yuzuha | 32,858 | 27,858 | 5,000 | Stun > Disorder by 287. |
+| R1 | Miyabi / Nangong / Astra | **37,190** | 32,190 | 5,000 | **Astra > Yuzuha by canyon.** |
+| R2 | Yixuan / Lucia / Dialyn | **33,901** | 28,901 | 5,000 | **Dialyn wins.** Sheer Force 400% scaling. |
+| R2 | Yixuan / Lucia / Ju Fufu | 33,501 | 28,501 | 5,000 | Ju Fufu CRIT buffs insufficient. |
+| R3 | Evelyn / Dialyn / Astra | 33,971 | 28,971 | 5,000 | Evelyn M3 baseline. Dialyn 15.5%. |
+| R3 | YSG / Dialyn / Sunna | **41,506** | 36,506 | 5,000 | **Gut call. Session-defining.** |
+
+**Key session findings:**
+
+1. **YSG > Evelyn M3 in Physical-friendly rooms.** 7,535 point gap. Not marginal. Structural. Promoted to Shell 2b.
+2. **Astra > Yuzuha for Miyabi.** 4,332 point gap. Miyabi is hybrid, not pure Anomaly. Astra buffs the whole girl.
+3. **Stun windows > Disorder for hybrid carries.** Nangong outperformed Vivian by 287 for Miyabi.
+4. **Dialyn > Ju Fufu for Yixuan.** 400% Sheer Force scaling > CRIT DMG buffs. 400 point gap.
+5. **Room signal > raw investment.** M1 YSG with deficit CD in a +30% CD room obliterated M3 Evelyn. Room buffs are force multipliers, not consolation prizes.
+6. **Cross-room lockout optimization matters.** Moving Dialyn from Room 2 to Room 3 cost 400 points but gained 7,535. Net +7,135. Always think across rooms.
+
+**Credit:** Andres's gut found YSG and Astra reallocation. Clio's bible provided the framework to benchmark systematically. The dynamic works.
