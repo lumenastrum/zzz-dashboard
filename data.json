@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "Andres's ZZZ Dashboard",
-    "updated": "2026-04-11",
-    "totalAgents": 23,
+    "updated": "2026-06-14",
+    "totalAgents": 24,
     "maxLevel": 60,
     "sessionTitle": "Session Results — March 14, 2026"
   },
@@ -50,6 +50,17 @@
       "level": 60,
       "discs": null,
       "notes": null
+    },
+    {
+      "name": "Cissia",
+      "section": "ATTACK",
+      "specialty": "Attack",
+      "attribute": "Electric",
+      "mindscape": "M0",
+      "wengine": "W1",
+      "level": 60,
+      "discs": "4pc Dawn's Bloom + 2pc Swing Jazz",
+      "notes": "Sub-DPS / Seed Vanguard partner. ER maxed (3.74/3.68 cap). CD farming near target (126.8%, goal 130+). CR overcapped in combat (81.6% effective)."
     },
     {
       "name": "Ellen",
