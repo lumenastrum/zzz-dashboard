@@ -44,7 +44,7 @@ PROFILE_CONFIG = {
 }
 
 SECTIONS = ["ATTACK", "ANOMALY", "STUN", "SUPPORT", "RAPTURE"]
-ATTRS = ["Physical", "Fire", "Electric", "Ice", "Ether"]
+ATTRS = ["Physical", "Fire", "Electric", "Ice", "Ether", "Wind"]
 STATUSES = ["green", "yellow", "red", "neutral"]
 
 # Windows consoles default to cp1252 and choke on ✓/✕/· — force UTF-8 (no-op elsewhere).

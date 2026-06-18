@@ -3,7 +3,7 @@
     "title": "Andres's ZZZ Dashboard",
     "updated": "2026-06-17",
     "maxLevel": 60,
-    "totalAgents": 24,
+    "totalAgents": 25,
     "sessionTitle": "Session Results — March 14, 2026"
   },
   "audit": [
@@ -387,6 +387,50 @@
       "priority": "Good — AP next",
       "_calcPriority": "green",
       "priorityStatus": "yellow"
+    },
+    {
+      "name": "Velina",
+      "type": "Wind Anomaly DPS",
+      "delta": null,
+      "stats": [
+        {
+          "min": 2400.0,
+          "unit": "",
+          "label": "ATK",
+          "current": "2871",
+          "optimal": "2600"
+        },
+        {
+          "min": 330.0,
+          "label": "Anomaly Proficiency",
+          "current": "347",
+          "optimal": "420"
+        },
+        {
+          "min": 2.6,
+          "unit": "",
+          "label": "Energy Regen",
+          "current": "2.88",
+          "optimal": "2.88"
+        },
+        {
+          "min": 60.0,
+          "unit": "(from ER passive)",
+          "label": "Anomaly Mastery",
+          "current": "112",
+          "optimal": "84"
+        },
+        {
+          "min": 9000.0,
+          "unit": "",
+          "label": "HP",
+          "current": "11858",
+          "optimal": "9500"
+        }
+      ],
+      "before": null,
+      "priority": "",
+      "priorityStatus": "neutral"
     }
   ],
   "agents": [
@@ -645,14 +689,25 @@
     },
     {
       "name": "Cissia",
+      "discs": "4pc Dawn's Bloom + 2pc Swing Jazz",
+      "level": 60,
+      "notes": "Sub-DPS / Seed Vanguard partner. ER maxed (3.74/3.68 cap). CD farming near target (126.8%, goal 130+). CR overcapped in combat (81.6% effective).",
       "section": "ATTACK",
-      "specialty": "Attack",
+      "wengine": "W1",
       "attribute": "Electric",
       "mindscape": "M0",
-      "wengine": "W1",
+      "specialty": "Attack"
+    },
+    {
+      "name": "Velina",
+      "discs": null,
       "level": 60,
-      "discs": "4pc Dawn's Bloom + 2pc Swing Jazz",
-      "notes": "Sub-DPS / Seed Vanguard partner. ER maxed (3.74/3.68 cap). CD farming near target (126.8%, goal 130+). CR overcapped in combat (81.6% effective)."
+      "notes": "Wind anomaly — ER 2.88 cap, 4pc Wuthering Salon + 2pc Swing Jazz. Joyau Dore (ER statstick).",
+      "section": "ANOMALY",
+      "wengine": "W1",
+      "attribute": "Wind",
+      "mindscape": "M0",
+      "specialty": "Anomaly"
     }
   ],
   "sessions": [
