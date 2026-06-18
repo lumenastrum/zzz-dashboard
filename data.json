@@ -1,55 +1,647 @@
 {
   "meta": {
     "title": "Andres's ZZZ Dashboard",
-    "updated": "2026-06-14",
-    "totalAgents": 24,
+    "updated": "2026-06-17",
     "maxLevel": 60,
+    "totalAgents": 24,
     "sessionTitle": "Session Results — March 14, 2026"
   },
-  "agents": [
+  "audit": [
     {
       "name": "Ye Shunguang",
-      "section": "ATTACK",
-      "specialty": "Attack",
-      "attribute": "Physical",
-      "mindscape": "M1",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": null
+      "type": "CRIT Carry",
+      "delta": null,
+      "stats": [
+        {
+          "min": 3000,
+          "label": "ATK",
+          "_status": "green",
+          "current": "3,731",
+          "optimal": "3,000+"
+        },
+        {
+          "max": 50,
+          "min": 45,
+          "unit": "%",
+          "label": "CR (sheet)",
+          "capMax": true,
+          "_status": "green",
+          "current": "48.2%",
+          "optimal": "45-50% sheet"
+        },
+        {
+          "min": 180,
+          "unit": "%",
+          "label": "CRIT DMG",
+          "_status": "red",
+          "current": "142.9%",
+          "optimal": "180-200%+"
+        }
+      ],
+      "before": null,
+      "priority": "Farm CRIT DMG",
+      "_calcPriority": "red",
+      "priorityStatus": "red"
     },
     {
       "name": "Evelyn",
-      "section": "ATTACK",
-      "specialty": "Attack",
-      "attribute": "Fire",
-      "mindscape": "M3",
-      "wengine": "W1",
-      "level": 60,
-      "discs": "4pc Woodpecker + 2pc Inferno",
-      "notes": "High investment carry"
+      "type": "CRIT Carry",
+      "delta": "+28.8% CD",
+      "stats": [
+        {
+          "min": 2600,
+          "label": "ATK",
+          "_status": "green",
+          "current": "2,644",
+          "optimal": "2,600-3,400+"
+        },
+        {
+          "min": 55,
+          "note": "▲",
+          "unit": "%",
+          "label": "CR (sheet)",
+          "_status": "green",
+          "current": "75.4%",
+          "optimal": "55%+ sheet"
+        },
+        {
+          "min": 160,
+          "note": "▲",
+          "unit": "%",
+          "label": "CRIT DMG",
+          "_status": "green",
+          "current": "165.2%",
+          "optimal": "160-200%+"
+        }
+      ],
+      "before": "CD was 136.4%",
+      "priority": "DONE — Core stats online",
+      "_calcPriority": "green",
+      "priorityStatus": "green"
     },
     {
       "name": "Seed",
+      "type": "CRIT Carry",
+      "delta": null,
+      "stats": [
+        {
+          "min": 2700,
+          "label": "ATK",
+          "_status": "green",
+          "current": "3,212",
+          "optimal": "2,700-3,000+"
+        },
+        {
+          "min": 75,
+          "unit": "%",
+          "label": "CRIT Rate",
+          "_status": "red",
+          "current": "65.8%",
+          "optimal": "75-90%+"
+        },
+        {
+          "min": 110,
+          "unit": "%",
+          "label": "CRIT DMG",
+          "_status": "green",
+          "current": "150.8%",
+          "optimal": "110-140%+"
+        }
+      ],
+      "before": null,
+      "priority": "Farm CRIT Rate",
+      "_calcPriority": "red",
+      "priorityStatus": "red"
+    },
+    {
+      "name": "Ellen",
+      "type": "CRIT Carry",
+      "delta": null,
+      "stats": [
+        {
+          "min": 2600,
+          "label": "ATK",
+          "_status": "green",
+          "current": "2,971",
+          "optimal": "2,600-3,000+"
+        },
+        {
+          "min": 90,
+          "unit": "%",
+          "label": "CRIT Rate",
+          "_status": "red",
+          "current": "39.4%",
+          "optimal": "90-100%"
+        },
+        {
+          "min": 120,
+          "unit": "%",
+          "label": "CRIT DMG",
+          "_status": "green",
+          "current": "136.4%",
+          "optimal": "120-180%+"
+        }
+      ],
+      "before": null,
+      "priority": "Benched — low priority",
+      "_calcPriority": "red",
+      "priorityStatus": "red"
+    },
+    {
+      "name": "Jane Doe",
+      "type": "Anomaly",
+      "delta": "Target AP is in-combat; confirm buffed value before heavy refarm",
+      "stats": [
+        {
+          "min": 2300,
+          "label": "ATK",
+          "_status": "yellow",
+          "current": "2,157",
+          "optimal": "2,300-2,800+"
+        },
+        {
+          "min": 375,
+          "label": "Anomaly Prof.",
+          "_status": "red",
+          "current": "335",
+          "optimal": "375-420+ in combat"
+        },
+        {
+          "min": 192,
+          "label": "Anom. Mastery",
+          "_status": "green",
+          "current": "192",
+          "optimal": "192+"
+        }
+      ],
+      "before": null,
+      "priority": "Farm AP / confirm in-combat AP",
+      "_calcPriority": "red",
+      "priorityStatus": "red"
+    },
+    {
+      "name": "Alice",
+      "type": "Anomaly",
+      "delta": null,
+      "stats": [
+        {
+          "min": 2600,
+          "label": "ATK",
+          "_status": "green",
+          "current": "2,769",
+          "optimal": "2,600-2,900+"
+        },
+        {
+          "min": 330,
+          "label": "Anomaly Prof.",
+          "_status": "yellow",
+          "current": "300",
+          "optimal": "330-420+"
+        },
+        {
+          "min": 184,
+          "label": "Anom. Mastery",
+          "_status": "green",
+          "current": "195",
+          "optimal": "184+"
+        }
+      ],
+      "before": null,
+      "priority": "Farm AP",
+      "_calcPriority": "yellow",
+      "priorityStatus": "red"
+    },
+    {
+      "name": "Miyabi",
+      "type": "CRIT / Anomaly",
+      "delta": "+14.4% CD",
+      "stats": [
+        {
+          "min": 2500,
+          "label": "ATK",
+          "_status": "green",
+          "current": "2,607",
+          "optimal": "2,500-3,600+"
+        },
+        {
+          "min": 75,
+          "unit": "%",
+          "label": "CRIT Rate",
+          "_status": "green",
+          "current": "80.2%",
+          "optimal": "75-95%"
+        },
+        {
+          "min": 150,
+          "note": "▲",
+          "unit": "%",
+          "label": "CRIT DMG",
+          "_status": "red",
+          "current": "123.6%",
+          "optimal": "150-190%"
+        }
+      ],
+      "before": "CD was 94.8%",
+      "priority": "Farm CRIT DMG",
+      "_calcPriority": "red",
+      "priorityStatus": "red"
+    },
+    {
+      "name": "Yixuan",
+      "type": "Rupture",
+      "delta": "+33.6% CD",
+      "stats": [
+        {
+          "min": 2100,
+          "label": "Sheer Force",
+          "_status": "green",
+          "current": "2,598",
+          "optimal": "2,100-2,400"
+        },
+        {
+          "min": 80,
+          "unit": "%",
+          "label": "CRIT Rate",
+          "_status": "red",
+          "current": "70.6%",
+          "optimal": "80-90%"
+        },
+        {
+          "min": 140,
+          "note": "▲",
+          "unit": "%",
+          "label": "CRIT DMG",
+          "_status": "red",
+          "current": "112.4%",
+          "optimal": "140-160%"
+        }
+      ],
+      "before": "CD was 78.8%",
+      "priority": "Farm CRIT Rate and CRIT DMG",
+      "_calcPriority": "red",
+      "priorityStatus": "red"
+    },
+    {
+      "name": "Yidhari",
+      "type": "Rupture (HP->Sheer Force)",
+      "delta": "Final post-fix: CR 75.4%->38.6% (70.6% combat). CD 98%->171.6% (201.6% combat). Manato disc stolen. +73.6% CD total swing.",
+      "stats": [
+        {
+          "min": 25000,
+          "note": "Each 1 HP = 0.1 SF. HP% on Slot 5/6 + Yunkui 2pc +10%.",
+          "label": "Max HP",
+          "_status": "red",
+          "current": "17,665",
+          "optimal": "25,000+"
+        },
+        {
+          "max": 65,
+          "min": 50,
+          "note": "OVERCAPPED. +20% sig +12% YT4pc = +32% conditional.",
+          "unit": "%",
+          "label": "CR (sheet)",
+          "_status": "red",
+          "current": "38.6%",
+          "optimal": "50-65%"
+        },
+        {
+          "min": 140,
+          "note": "FIXED. +30% Addl Ability = 196.8% combat. Was 98%.",
+          "unit": "%",
+          "label": "CRIT DMG",
+          "_status": "green",
+          "current": "171.6%",
+          "optimal": "140-160%"
+        }
+      ],
+      "before": "Pre-fix: CR 75.4% (107% combat, overcapped 37%). CD 98% (128% combat, 12 under floor). 11 DEF rolls. Slot 4 CR% main.",
+      "priority": "Farm CD/HP subs on new B&BS pieces",
+      "_calcPriority": "red",
+      "priorityStatus": "yellow"
+    },
+    {
+      "name": "Aria",
+      "type": "Anomaly (Abloom)",
+      "delta": "In-combat AP is higher from sig/set; sheet AP still has room",
+      "stats": [
+        {
+          "min": 2600,
+          "label": "ATK",
+          "_status": "green",
+          "current": "2,875",
+          "optimal": "2,600-2,900+"
+        },
+        {
+          "min": 184,
+          "note": "In-combat 300+ via sig (30% AM) + set bonuses",
+          "label": "Anom. Mastery",
+          "_status": "green",
+          "current": "253",
+          "optimal": "184-244"
+        },
+        {
+          "min": 330,
+          "note": "In-combat ~442 via sig (+90) + Shining Aria 4pc (+36). Target: 400-500",
+          "label": "Anomaly Prof.",
+          "_status": "yellow",
+          "current": "316",
+          "optimal": "330-420+"
+        }
+      ],
+      "before": "AP was 310 | AM was incorrectly flagged red",
+      "priority": "Farm AP substats",
+      "_calcPriority": "yellow",
+      "priorityStatus": "yellow"
+    },
+    {
+      "name": "Nangong Yu",
+      "type": "Anomaly Stunner",
+      "delta": "AM conversion puts Impact around 221",
+      "stats": [
+        {
+          "min": 200,
+          "note": "AM converts to Impact",
+          "label": "Anom. Mastery",
+          "_status": "green",
+          "current": "211",
+          "optimal": "200+"
+        },
+        {
+          "min": 320,
+          "note": "At floor",
+          "label": "Anomaly Prof.",
+          "_status": "green",
+          "current": "323",
+          "optimal": "320-400"
+        },
+        {
+          "min": 220,
+          "note": "Converted",
+          "label": "Impact",
+          "_status": "green",
+          "current": "221",
+          "optimal": "220+"
+        }
+      ],
+      "before": "Sheet Impact: 120",
+      "priority": "Good — AP next",
+      "_calcPriority": "green",
+      "priorityStatus": "yellow"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Ye Shunguang",
+      "discs": null,
+      "level": 60,
+      "notes": null,
       "section": "ATTACK",
-      "specialty": "Attack",
+      "wengine": "W1",
+      "attribute": "Physical",
+      "mindscape": "M1",
+      "specialty": "Attack"
+    },
+    {
+      "name": "Evelyn",
+      "discs": "4pc Woodpecker + 2pc Inferno",
+      "level": 60,
+      "notes": "High investment carry",
+      "section": "ATTACK",
+      "wengine": "W1",
+      "attribute": "Fire",
+      "mindscape": "M3",
+      "specialty": "Attack"
+    },
+    {
+      "name": "Seed",
+      "discs": null,
+      "level": 60,
+      "notes": null,
+      "section": "ATTACK",
+      "wengine": "W1",
       "attribute": "Electric",
       "mindscape": "M0",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": null
+      "specialty": "Attack"
     },
     {
       "name": "Soldier 0 Anby",
+      "discs": null,
+      "level": 60,
+      "notes": null,
       "section": "ATTACK",
-      "specialty": "Attack",
+      "wengine": "W1",
       "attribute": "Electric",
       "mindscape": "M1",
-      "wengine": "W1",
-      "level": 60,
+      "specialty": "Attack"
+    },
+    {
+      "name": "Ellen",
       "discs": null,
-      "notes": null
+      "level": 60,
+      "notes": "Low investment / Benched",
+      "section": "ATTACK",
+      "wengine": "W0",
+      "attribute": "Ice",
+      "mindscape": "M0",
+      "specialty": "Attack"
+    },
+    {
+      "name": "Jane Doe",
+      "discs": null,
+      "level": 60,
+      "notes": "High investment carry",
+      "section": "ANOMALY",
+      "wengine": "W1",
+      "attribute": "Physical",
+      "mindscape": "M3",
+      "specialty": "Anomaly"
+    },
+    {
+      "name": "Alice",
+      "discs": null,
+      "level": 60,
+      "notes": null,
+      "section": "ANOMALY",
+      "wengine": "W1",
+      "attribute": "Physical",
+      "mindscape": "M1",
+      "specialty": "Anomaly"
+    },
+    {
+      "name": "Miyabi",
+      "discs": null,
+      "level": 60,
+      "notes": "Needs CD farming",
+      "section": "ANOMALY",
+      "wengine": "W1",
+      "attribute": "Ice",
+      "mindscape": "M1",
+      "specialty": "Anomaly"
+    },
+    {
+      "name": "Vivian",
+      "discs": null,
+      "level": 60,
+      "notes": null,
+      "section": "ANOMALY",
+      "wengine": "W1",
+      "attribute": "Ether",
+      "mindscape": "M2",
+      "specialty": "Anomaly"
+    },
+    {
+      "name": "Burnice",
+      "discs": null,
+      "level": 60,
+      "notes": null,
+      "section": "ANOMALY",
+      "wengine": "W1",
+      "attribute": "Fire",
+      "mindscape": "M0",
+      "specialty": "Anomaly"
+    },
+    {
+      "name": "Aria",
+      "discs": null,
+      "level": 60,
+      "notes": "Angels of Delusion DPS",
+      "section": "ANOMALY",
+      "wengine": "W1",
+      "attribute": "Ether",
+      "mindscape": "M0",
+      "specialty": "Anomaly"
+    },
+    {
+      "name": "Dialyn",
+      "discs": null,
+      "level": 60,
+      "notes": null,
+      "section": "STUN",
+      "wengine": "W1",
+      "attribute": "Physical",
+      "mindscape": "M0",
+      "specialty": "Stun"
+    },
+    {
+      "name": "Ju Fufu",
+      "discs": null,
+      "level": 60,
+      "notes": null,
+      "section": "STUN",
+      "wengine": "W1",
+      "attribute": "Fire",
+      "mindscape": "M0",
+      "specialty": "Stun"
+    },
+    {
+      "name": "Trigger",
+      "discs": null,
+      "level": 60,
+      "notes": null,
+      "section": "STUN",
+      "wengine": "W1",
+      "attribute": "Electric",
+      "mindscape": "M0",
+      "specialty": "Stun"
+    },
+    {
+      "name": "Lighter",
+      "discs": null,
+      "level": 60,
+      "notes": "Low investment",
+      "section": "STUN",
+      "wengine": "W0",
+      "attribute": "Fire",
+      "mindscape": "M0",
+      "specialty": "Stun"
+    },
+    {
+      "name": "Nangong Yu",
+      "discs": null,
+      "level": 60,
+      "notes": "Anomaly-Stun hybrid — sig W1 Lv.60",
+      "section": "STUN",
+      "wengine": "W1",
+      "attribute": "Ether",
+      "mindscape": "M0",
+      "specialty": "Stun"
+    },
+    {
+      "name": "Astra Yao",
+      "discs": null,
+      "level": 60,
+      "notes": "Universal support",
+      "section": "SUPPORT",
+      "wengine": "W1",
+      "attribute": "Ether",
+      "mindscape": "M1",
+      "specialty": "Support"
+    },
+    {
+      "name": "Lucia",
+      "discs": null,
+      "level": 60,
+      "notes": null,
+      "section": "SUPPORT",
+      "wengine": "W1",
+      "attribute": "Ether",
+      "mindscape": "M0",
+      "specialty": "Support"
+    },
+    {
+      "name": "Yuzuha",
+      "discs": null,
+      "level": 60,
+      "notes": null,
+      "section": "SUPPORT",
+      "wengine": "W1",
+      "attribute": "Physical",
+      "mindscape": "M0",
+      "specialty": "Support"
+    },
+    {
+      "name": "Sunna",
+      "discs": null,
+      "level": 60,
+      "notes": null,
+      "section": "SUPPORT",
+      "wengine": "W1",
+      "attribute": "Physical",
+      "mindscape": "M0",
+      "specialty": "Support"
+    },
+    {
+      "name": "Zhao",
+      "discs": null,
+      "level": 60,
+      "notes": "Low investment",
+      "section": "SUPPORT",
+      "wengine": "W0",
+      "attribute": "Ice",
+      "mindscape": "M0",
+      "specialty": "Support"
+    },
+    {
+      "name": "Yidhari",
+      "discs": "4pc Yunkui Tales + 2pc Branch & Blade Song",
+      "level": 60,
+      "notes": "HP->SF (0.1/HP). Structure FIXED 5/29. Ugly rolls but correct mains. Farm CD subs.",
+      "section": "RAPTURE",
+      "wengine": "W1",
+      "attribute": "Ice",
+      "mindscape": "M0",
+      "specialty": "Rapture"
+    },
+    {
+      "name": "Yixuan",
+      "discs": null,
+      "level": 60,
+      "notes": "Needs CD farming",
+      "section": "RAPTURE",
+      "wengine": "W1",
+      "attribute": "Ether",
+      "mindscape": "M1",
+      "specialty": "Rapture"
     },
     {
       "name": "Cissia",
@@ -61,551 +653,6 @@
       "level": 60,
       "discs": "4pc Dawn's Bloom + 2pc Swing Jazz",
       "notes": "Sub-DPS / Seed Vanguard partner. ER maxed (3.74/3.68 cap). CD farming near target (126.8%, goal 130+). CR overcapped in combat (81.6% effective)."
-    },
-    {
-      "name": "Ellen",
-      "section": "ATTACK",
-      "specialty": "Attack",
-      "attribute": "Ice",
-      "mindscape": "M0",
-      "wengine": "W0",
-      "level": 60,
-      "discs": null,
-      "notes": "Low investment / Benched"
-    },
-    {
-      "name": "Jane Doe",
-      "section": "ANOMALY",
-      "specialty": "Anomaly",
-      "attribute": "Physical",
-      "mindscape": "M3",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": "High investment carry"
-    },
-    {
-      "name": "Alice",
-      "section": "ANOMALY",
-      "specialty": "Anomaly",
-      "attribute": "Physical",
-      "mindscape": "M1",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": null
-    },
-    {
-      "name": "Miyabi",
-      "section": "ANOMALY",
-      "specialty": "Anomaly",
-      "attribute": "Ice",
-      "mindscape": "M1",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": "Needs CD farming"
-    },
-    {
-      "name": "Vivian",
-      "section": "ANOMALY",
-      "specialty": "Anomaly",
-      "attribute": "Ether",
-      "mindscape": "M2",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": null
-    },
-    {
-      "name": "Burnice",
-      "section": "ANOMALY",
-      "specialty": "Anomaly",
-      "attribute": "Fire",
-      "mindscape": "M0",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": null
-    },
-    {
-      "name": "Aria",
-      "section": "ANOMALY",
-      "specialty": "Anomaly",
-      "attribute": "Ether",
-      "mindscape": "M0",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": "Angels of Delusion DPS"
-    },
-    {
-      "name": "Dialyn",
-      "section": "STUN",
-      "specialty": "Stun",
-      "attribute": "Physical",
-      "mindscape": "M0",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": null
-    },
-    {
-      "name": "Ju Fufu",
-      "section": "STUN",
-      "specialty": "Stun",
-      "attribute": "Fire",
-      "mindscape": "M0",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": null
-    },
-    {
-      "name": "Trigger",
-      "section": "STUN",
-      "specialty": "Stun",
-      "attribute": "Electric",
-      "mindscape": "M0",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": null
-    },
-    {
-      "name": "Lighter",
-      "section": "STUN",
-      "specialty": "Stun",
-      "attribute": "Fire",
-      "mindscape": "M0",
-      "wengine": "W0",
-      "level": 60,
-      "discs": null,
-      "notes": "Low investment"
-    },
-    {
-      "name": "Nangong Yu",
-      "section": "STUN",
-      "specialty": "Stun",
-      "attribute": "Ether",
-      "mindscape": "M0",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": "Anomaly-Stun hybrid — sig W1 Lv.60"
-    },
-    {
-      "name": "Astra Yao",
-      "section": "SUPPORT",
-      "specialty": "Support",
-      "attribute": "Ether",
-      "mindscape": "M1",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": "Universal support"
-    },
-    {
-      "name": "Lucia",
-      "section": "SUPPORT",
-      "specialty": "Support",
-      "attribute": "Ether",
-      "mindscape": "M0",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": null
-    },
-    {
-      "name": "Yuzuha",
-      "section": "SUPPORT",
-      "specialty": "Support",
-      "attribute": "Physical",
-      "mindscape": "M0",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": null
-    },
-    {
-      "name": "Sunna",
-      "section": "SUPPORT",
-      "specialty": "Support",
-      "attribute": "Physical",
-      "mindscape": "M0",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": null
-    },
-    {
-      "name": "Zhao",
-      "section": "SUPPORT",
-      "specialty": "Support",
-      "attribute": "Ice",
-      "mindscape": "M0",
-      "wengine": "W0",
-      "level": 60,
-      "discs": null,
-      "notes": "Low investment"
-    },
-    {
-      "name": "Yidhari",
-      "section": "RAPTURE",
-      "specialty": "Rapture",
-      "attribute": "Ice",
-      "mindscape": "M0",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": "Needs CD farming"
-    },
-    {
-      "name": "Yixuan",
-      "section": "RAPTURE",
-      "specialty": "Rapture",
-      "attribute": "Ether",
-      "mindscape": "M1",
-      "wengine": "W1",
-      "level": 60,
-      "discs": null,
-      "notes": "Needs CD farming"
-    }
-  ],
-  "audit": [
-    {
-      "name": "Ye Shunguang",
-      "type": "CRIT Carry",
-      "stats": [
-        {
-          "label": "ATK",
-          "optimal": "3,000+",
-          "current": "3,731",
-          "min": 3000
-        },
-        {
-          "label": "CR (sheet)",
-          "optimal": "45-50% sheet",
-          "current": "48.2%",
-          "min": 45,
-          "max": 50,
-          "capMax": true,
-          "unit": "%"
-        },
-        {
-          "label": "CRIT DMG",
-          "optimal": "180-200%+",
-          "current": "142.8%",
-          "min": 180,
-          "unit": "%"
-        }
-      ],
-      "before": null,
-      "delta": null,
-      "priority": "Farm CRIT DMG",
-      "priorityStatus": "red"
-    },
-    {
-      "name": "Evelyn",
-      "type": "CRIT Carry",
-      "stats": [
-        {
-          "label": "ATK",
-          "optimal": "2,600-3,400+",
-          "current": "2,644",
-          "min": 2600
-        },
-        {
-          "label": "CR (sheet)",
-          "optimal": "55%+ sheet",
-          "current": "75.4%",
-          "min": 55,
-          "unit": "%",
-          "note": "▲"
-        },
-        {
-          "label": "CRIT DMG",
-          "optimal": "160-200%+",
-          "current": "165.2%",
-          "min": 160,
-          "unit": "%",
-          "note": "▲"
-        }
-      ],
-      "before": "CD was 136.4%",
-      "delta": "+28.8% CD",
-      "priority": "DONE — Core stats online",
-      "priorityStatus": "green"
-    },
-    {
-      "name": "Seed",
-      "type": "CRIT Carry",
-      "stats": [
-        {
-          "label": "ATK",
-          "optimal": "2,700-3,000+",
-          "current": "3,212",
-          "min": 2700
-        },
-        {
-          "label": "CRIT Rate",
-          "optimal": "75-90%+",
-          "current": "65.8%",
-          "min": 75,
-          "unit": "%"
-        },
-        {
-          "label": "CRIT DMG",
-          "optimal": "110-140%+",
-          "current": "150.8%",
-          "min": 110,
-          "unit": "%"
-        }
-      ],
-      "before": null,
-      "delta": null,
-      "priority": "Farm CRIT Rate",
-      "priorityStatus": "red"
-    },
-    {
-      "name": "Ellen",
-      "type": "CRIT Carry",
-      "stats": [
-        {
-          "label": "ATK",
-          "optimal": "2,600-3,000+",
-          "current": "2,971",
-          "min": 2600
-        },
-        {
-          "label": "CRIT Rate",
-          "optimal": "90-100%",
-          "current": "39.4%",
-          "min": 90,
-          "unit": "%"
-        },
-        {
-          "label": "CRIT DMG",
-          "optimal": "120-180%+",
-          "current": "136.4%",
-          "min": 120,
-          "unit": "%"
-        }
-      ],
-      "before": null,
-      "delta": null,
-      "priority": "Benched — low priority",
-      "priorityStatus": "red"
-    },
-    {
-      "name": "Jane Doe",
-      "type": "Anomaly",
-      "stats": [
-        {
-          "label": "ATK",
-          "optimal": "2,300-2,800+",
-          "current": "2,157",
-          "min": 2300
-        },
-        {
-          "label": "Anomaly Prof.",
-          "optimal": "375-420+ in combat",
-          "current": "335",
-          "min": 375
-        },
-        {
-          "label": "Anom. Mastery",
-          "optimal": "192+",
-          "current": "192",
-          "min": 192
-        }
-      ],
-      "before": null,
-      "delta": "Target AP is in-combat; confirm buffed value before heavy refarm",
-      "priority": "Farm AP / confirm in-combat AP",
-      "priorityStatus": "red"
-    },
-    {
-      "name": "Alice",
-      "type": "Anomaly",
-      "stats": [
-        {
-          "label": "ATK",
-          "optimal": "2,600-2,900+",
-          "current": "2,769",
-          "min": 2600
-        },
-        {
-          "label": "Anomaly Prof.",
-          "optimal": "330-420+",
-          "current": "300",
-          "min": 330
-        },
-        {
-          "label": "Anom. Mastery",
-          "optimal": "184+",
-          "current": "195",
-          "min": 184
-        }
-      ],
-      "before": null,
-      "delta": null,
-      "priority": "Farm AP",
-      "priorityStatus": "red"
-    },
-    {
-      "name": "Miyabi",
-      "type": "CRIT / Anomaly",
-      "stats": [
-        {
-          "label": "ATK",
-          "optimal": "2,500-3,600+",
-          "current": "2,859",
-          "min": 2500
-        },
-        {
-          "label": "CRIT Rate",
-          "optimal": "75-95%",
-          "current": "80.2%",
-          "min": 75,
-          "unit": "%"
-        },
-        {
-          "label": "CRIT DMG",
-          "optimal": "150-190%",
-          "current": "109.2%",
-          "min": 150,
-          "unit": "%",
-          "note": "▲"
-        }
-      ],
-      "before": "CD was 94.8%",
-      "delta": "+14.4% CD",
-      "priority": "Farm CRIT DMG",
-      "priorityStatus": "red"
-    },
-    {
-      "name": "Yixuan",
-      "type": "Rupture",
-      "stats": [
-        {
-          "label": "Sheer Force",
-          "optimal": "2,100-2,400",
-          "current": "2,598",
-          "min": 2100
-        },
-        {
-          "label": "CRIT Rate",
-          "optimal": "80-90%",
-          "current": "70.6%",
-          "min": 80,
-          "unit": "%"
-        },
-        {
-          "label": "CRIT DMG",
-          "optimal": "140-160%",
-          "current": "112.4%",
-          "min": 140,
-          "unit": "%",
-          "note": "▲"
-        }
-      ],
-      "before": "CD was 78.8%",
-      "delta": "+33.6% CD",
-      "priority": "Farm CRIT Rate and CRIT DMG",
-      "priorityStatus": "red"
-    },
-    {
-      "name": "Yidhari",
-      "type": "Rupture",
-      "stats": [
-        {
-          "label": "Sheer Force",
-          "optimal": "2,400-2,600",
-          "current": "2,445",
-          "min": 2400
-        },
-        {
-          "label": "CRIT Rate",
-          "optimal": "58.6-65.8% sheet",
-          "current": "75.4%",
-          "min": 58.6,
-          "unit": "%"
-        },
-        {
-          "label": "CRIT DMG",
-          "optimal": "120-150%",
-          "current": "98%",
-          "min": 120,
-          "unit": "%",
-          "note": "▲"
-        }
-      ],
-      "before": "CD was 83.6%",
-      "delta": "+14.4% CD",
-      "priority": "Farm CRIT DMG",
-      "priorityStatus": "red"
-    },
-    {
-      "name": "Aria",
-      "type": "Anomaly (Abloom)",
-      "stats": [
-        {
-          "label": "ATK",
-          "optimal": "2,600-2,900+",
-          "current": "2,875",
-          "min": 2600
-        },
-        {
-          "label": "Anom. Mastery",
-          "optimal": "184-244",
-          "current": "253",
-          "min": 184,
-          "note": "In-combat 300+ via sig (30% AM) + set bonuses"
-        },
-        {
-          "label": "Anomaly Prof.",
-          "optimal": "330-420+",
-          "current": "316",
-          "min": 330,
-          "note": "In-combat ~442 via sig (+90) + Shining Aria 4pc (+36). Target: 400-500"
-        }
-      ],
-      "before": "AP was 310 | AM was incorrectly flagged red",
-      "delta": "In-combat AP is higher from sig/set; sheet AP still has room",
-      "priority": "Farm AP substats",
-      "priorityStatus": "yellow"
-    },
-    {
-      "name": "Nangong Yu",
-      "type": "Anomaly Stunner",
-      "stats": [
-        {
-          "label": "Anom. Mastery",
-          "optimal": "200+",
-          "current": "211",
-          "min": 200,
-          "note": "AM converts to Impact"
-        },
-        {
-          "label": "Anomaly Prof.",
-          "optimal": "320-400",
-          "current": "323",
-          "min": 320,
-          "note": "At floor"
-        },
-        {
-          "label": "Impact",
-          "optimal": "220+",
-          "current": "221",
-          "min": 220,
-          "note": "Converted"
-        }
-      ],
-      "before": "Sheet Impact: 120",
-      "delta": "AM conversion puts Impact around 221",
-      "priority": "Good — AP next",
-      "priorityStatus": "yellow"
     }
   ],
   "sessions": [
@@ -648,6 +695,22 @@
       "label": "Nangong Yu Audit Correction (4/11)",
       "detail": "AM 207 → 211 | AP 305 → 323 | Sig leveled to 60. Impact 120 sheet = 221+ in-combat via AM conversion. Audit reframed.",
       "status": "green"
+    },
+    {
+      "label": "Yidhari Full Disc Audit (5/29)",
+      "detail": "6-disc teardown: Slot 4 CR% main (+24% wasted), 2pc WE (+8% wasted), 11 DEF rolls, 0 CD main stats. Sheet CR 75.4% = 107% combat (overcapped 37%).",
+      "status": "red"
+    },
+    {
+      "label": "Yidhari Audit Correction (5/29)",
+      "detail": "CR optimal: 50-65% sheet (was 58.6-65.8%). CD target: 140-160% (was 120-150%). HP scaling contextualized. Fix: Slot 4 CD% main -> Slot 5 set swap (WE->B&BS) -> Slot 2 set swap.",
+      "status": "yellow"
+    },
+    {
+      "label": "Yidhari Structure Fix Applied (5/29)",
+      "detail": "Slot 4 CR%->CD%. Slots 2+5 WE->B&BS. Manato Slot 4 stolen (HP%+CR subs). Final: CR 38.6% (70.6% combat), CD 171.6% (201.6% combat), SF 2,411. Total CD swing: +73.6%.",
+      "status": "green"
     }
-  ]
+  ],
+  "pullRecommendations": []
 }
